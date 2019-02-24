@@ -1,4 +1,4 @@
-@yield('layouts.test')
+@yield('layouts.app')
 
 @section('content')
   <div class="page-header">
