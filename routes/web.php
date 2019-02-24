@@ -21,3 +21,7 @@ Route::get('/causas', 'PaginasController@causes')->name('causes');
 Route::get('/galeria', 'PaginasController@gallery')->name('gallery');
 Route::get('/noticias', 'PaginasController@news')->name('news');
 Route::get('/contacto', 'PaginasController@contact')->name('contact');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
