@@ -1,11 +1,12 @@
-@extends('layouts.test')
+@extends('layouts.app')
 
 @section('content')
+  <body class="single-page about-page">
     <div class="page-header">
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <h1>About Us</h1>
+                    <h1>Nosotros</h1>
                 </div><!-- .col -->
             </div><!-- .row -->
         </div><!-- .container -->
@@ -17,7 +18,7 @@
                 <div class="col-12 col-lg-6 order-2 order-lg-1">
                     <div class="welcome-content">
                         <header class="entry-header">
-                            <h2 class="entry-title">Wellcome to our Charity</h2>
+                            <h2 class="entry-title">Bienvenido a nuestra fundación</h2>
                         </header><!-- .entry-header -->
 
                         <div class="entry-content mt-5">
@@ -25,7 +26,7 @@
                         </div><!-- .entry-content -->
 
                         <div class="entry-footer mt-5">
-                            <a href="#" class="btn gradient-bg mr-2">Read More</a>
+                            <a href="#" class="btn gradient-bg mr-2">Leer más</a>
                         </div><!-- .entry-footer -->
                     </div><!-- .welcome-content -->
                 </div><!-- .col -->
@@ -128,4 +129,5 @@
             </div>
         </div>
     </div>
+  </body>
 @endsection

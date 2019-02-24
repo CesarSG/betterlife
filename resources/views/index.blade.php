@@ -1,18 +1,18 @@
-@extends('layouts.test')
+@extends('layouts.app')
 
 @section('content')
 <div class="swiper-container hero-slider">
     <div class="swiper-wrapper">
         <div class="swiper-slide hero-content-wrap">
-            <img src="images/hero.jpg" alt="">
+            <img src="images/Banner.jpg" alt="">
 
             <div class="hero-content-overlay position-absolute w-100 h-100">
                 <div class="container h-100">
                     <div class="row h-100">
                         <div class="col-12 col-lg-8 d-flex flex-column justify-content-center align-items-start">
                             <header class="entry-header">
-                                <h1>Donate</h1>
-                                <h4>4 a better world</h4>
+                                <h1>Dona</h1>
+                                <h4>para una buena causa</h4>
                             </header><!-- .entry-header -->
 
                             <div class="entry-content mt-4">
@@ -20,8 +20,8 @@
                             </div><!-- .entry-content -->
 
                             <footer class="entry-footer d-flex flex-wrap align-items-center mt-5">
-                                <a href="#" class="btn gradient-bg mr-2">Donate Now</a>
-                                <a href="#" class="btn orange-border">Read More</a>
+                                <a href="#" class="btn gradient-bg mr-2">Dona Ahora</a>
+                                <a href="#" class="btn orange-border">Leer más</a>
                             </footer><!-- .entry-footer -->
                         </div><!-- .col -->
                     </div><!-- .row -->
@@ -30,15 +30,15 @@
         </div><!-- .hero-content-wrap -->
 
         <div class="swiper-slide hero-content-wrap">
-            <img src="images/hero.jpg" alt="">
+            <img src="images/Banner2.jpg" alt="">
 
             <div class="hero-content-overlay position-absolute w-100 h-100">
                 <div class="container h-100">
                     <div class="row h-100">
                         <div class="col-12 col-lg-8 d-flex flex-column justify-content-center align-items-start">
                             <header class="entry-header">
-                                <h1>Donate</h1>
-                                <h4>4 a better world</h4>
+                                <h1>Juntos</h1>
+                                <h4>por la educación</h4>
                             </header><!-- .entry-header -->
 
                             <div class="entry-content mt-4">
@@ -46,8 +46,8 @@
                             </div><!-- .entry-content -->
 
                             <footer class="entry-footer d-flex flex-wrap align-items-center mt-5">
-                                <a href="#" class="btn gradient-bg mr-2">Donate Now</a>
-                                <a href="#" class="btn orange-border">Read More</a>
+                                <a href="#" class="btn gradient-bg mr-2">Dona Ahora</a>
+                                <a href="#" class="btn orange-border">Leer más</a>
                             </footer><!-- .entry-footer -->
                         </div><!-- .col -->
                     </div><!-- .row -->
@@ -56,15 +56,15 @@
         </div><!-- .hero-content-wrap -->
 
         <div class="swiper-slide hero-content-wrap">
-            <img src="images/hero.jpg" alt="">
+            <img src="images/Banner3.jpg" alt="">
 
             <div class="hero-content-overlay position-absolute w-100 h-100">
                 <div class="container h-100">
                     <div class="row h-100">
                         <div class="col-12 col-lg-8 d-flex flex-column justify-content-center align-items-start">
                             <header class="entry-header">
-                                <h1>Donate</h1>
-                                <h4>4 a better world</h4>
+                                <h1>Por</h1>
+                                <h4>mejores oportunidades</h4>
                             </header><!-- .entry-header -->
 
                             <div class="entry-content mt-4">
@@ -72,8 +72,8 @@
                             </div><!-- .entry-content -->
 
                             <footer class="entry-footer d-flex flex-wrap align-items-center mt-5">
-                                <a href="#" class="btn gradient-bg mr-2">Donate Now</a>
-                                <a href="#" class="btn orange-border">Read More</a>
+                                <a href="#" class="btn gradient-bg mr-2">Dona Ahora</a>
+                                <a href="#" class="btn orange-border">Leer más</a>
                             </footer><!-- .entry-footer -->
                         </div><!-- .col -->
                     </div><!-- .row -->
@@ -109,7 +109,7 @@
                     </figure>
 
                     <header class="entry-header">
-                        <h3 class="entry-title">Become a Volunteer</h3>
+                        <h3 class="entry-title">Vuelvete un Voluntario</h3>
                     </header>
 
                     <div class="entry-content">
@@ -126,7 +126,7 @@
                     </figure>
 
                     <header class="entry-header">
-                        <h3 class="entry-title">Dance & Music</h3>
+                        <h3 class="entry-title">Enterate de nuestro eventos</h3>
                     </header>
 
                     <div class="entry-content">
@@ -143,7 +143,7 @@
                     </figure>
 
                     <header class="entry-header">
-                        <h3 class="entry-title">Online Conference</h3>
+                        <h3 class="entry-title">Ayudanos a recaudar fondos</h3>
                     </header>
 
                     <div class="entry-content">
@@ -161,7 +161,7 @@
             <div class="col-12 col-lg-6 order-2 order-lg-1">
                 <div class="welcome-content">
                     <header class="entry-header">
-                        <h2 class="entry-title">Wellcome to our Charity</h2>
+                        <h2 class="entry-title">Bienvenido a nuestra fundación</h2>
                     </header><!-- .entry-header -->
 
                     <div class="entry-content mt-5">
@@ -169,7 +169,7 @@
                     </div><!-- .entry-content -->
 
                     <div class="entry-footer mt-5">
-                        <a href="#" class="btn gradient-bg mr-2">Read More</a>
+                        <a href="#" class="btn gradient-bg mr-2">Leer más </a>
                     </div><!-- .entry-footer -->
                 </div><!-- .welcome-content -->
             </div><!-- .col -->
@@ -187,7 +187,7 @@
             <div class="col-12 col-lg-6">
                 <div class="upcoming-events">
                     <div class="section-heading">
-                        <h2 class="entry-title">Upcoming Events</h2>
+                        <h2 class="entry-title">Futuros Eventos</h2>
                     </div><!-- .section-heading -->
 
                     <div class="event-wrap d-flex flex-wrap justify-content-between">
@@ -197,14 +197,14 @@
 
                         <div class="event-content-wrap">
                             <header class="entry-header d-flex flex-wrap align-items-center">
-                                <h3 class="entry-title w-100 m-0"><a href="#">Fundraiser for Kids</a></h3>
+                                <h3 class="entry-title w-100 m-0"><a href="#">Recaudador de fondos para niños</a></h3>
 
                                 <div class="posted-date">
-                                    <a href="#">Aug 25, 2018 </a>
+                                    <a href="#">15 Abril, 2019 </a>
                                 </div><!-- .posted-date -->
 
                                 <div class="cats-links">
-                                    <a href="#">Ball Room New York</a>
+                                    <a href="#">Guadalajara, México</a>
                                 </div><!-- .cats-links -->
                             </header><!-- .entry-header -->
 
@@ -213,7 +213,7 @@
                             </div><!-- .entry-content -->
 
                             <div class="entry-footer">
-                                <a href="#">Read More</a>
+                                <a href="#">Leer más</a>
                             </div><!-- .entry-footer -->
                         </div><!-- .event-content-wrap -->
                     </div><!-- .event-wrap -->
@@ -225,14 +225,14 @@
 
                         <div class="event-content-wrap">
                             <header class="entry-header d-flex flex-wrap align-items-center">
-                                <h3 class="entry-title w-100 m-0"><a href="#">Bring water to the childrens</a></h3>
+                                <h3 class="entry-title w-100 m-0"><a href="#">Llevar agua a los niños</a></h3>
 
                                 <div class="posted-date">
-                                    <a href="#">Aug 25, 2018 </a>
+                                    <a href="#">06 Septiembre, 2019 </a>
                                 </div><!-- .posted-date -->
 
                                 <div class="cats-links">
-                                    <a href="#">Ball Room New York</a>
+                                    <a href="#">CDMX, México</a>
                                 </div><!-- .cats-links -->
                             </header><!-- .entry-header -->
 
@@ -241,7 +241,7 @@
                             </div><!-- .entry-content -->
 
                             <div class="entry-footer">
-                                <a href="#">Read More</a>
+                                <a href="#">Leer más</a>
                             </div><!-- .entry-footer -->
                         </div><!-- .event-content-wrap -->
                     </div><!-- .event-wrap -->
@@ -253,14 +253,14 @@
 
                         <div class="event-content-wrap">
                             <header class="entry-header d-flex flex-wrap align-items-center">
-                                <h3 class="entry-title w-100 m-0"><a href="#">Bring water to the childrens</a></h3>
+                                <h3 class="entry-title w-100 m-0"><a href="#">Juntos por la educación</a></h3>
 
                                 <div class="posted-date">
-                                    <a href="#">Aug 25, 2018 </a>
+                                    <a href="#">19 Junio, 2019 </a>
                                 </div><!-- .posted-date -->
 
                                 <div class="cats-links">
-                                    <a href="#">Ball Room New York</a>
+                                    <a href="#">Queretaro, México</a>
                                 </div><!-- .cats-links -->
                             </header><!-- .entry-header -->
 
@@ -269,7 +269,7 @@
                             </div><!-- .entry-content -->
 
                             <div class="entry-footer">
-                                <a href="#">Read More</a>
+                                <a href="#">Leer más</a>
                             </div><!-- .entry-footer -->
                         </div><!-- .event-content-wrap -->
                     </div><!-- .event-wrap -->
@@ -279,7 +279,7 @@
             <div class="col-12 col-lg-6">
                 <div class="featured-cause">
                     <div class="section-heading">
-                        <h2 class="entry-title">Featured Cause</h2>
+                        <h2 class="entry-title">Causa Destacada</h2>
                     </div><!-- .section-heading -->
 
                     <div class="cause-wrap d-flex flex-wrap justify-content-between">
@@ -289,14 +289,14 @@
 
                         <div class="cause-content-wrap">
                             <header class="entry-header d-flex flex-wrap align-items-center">
-                                <h3 class="entry-title w-100 m-0"><a href="#">Fundraiser for Kids</a></h3>
+                                <h3 class="entry-title w-100 m-0"><a href="#">Mejores Opotunidades</a></h3>
 
                                 <div class="posted-date">
-                                    <a href="#">Aug 25, 2018 </a>
+                                    <a href="#">05 Enero, 2019 </a>
                                 </div><!-- .posted-date -->
 
                                 <div class="cats-links">
-                                    <a href="#">Ball Room New York</a>
+                                    <a href="#">Guadalajara</a>
                                 </div><!-- .cats-links -->
                             </header><!-- .entry-header -->
 
@@ -305,7 +305,7 @@
                             </div><!-- .entry-content -->
 
                             <div class="entry-footer mt-5">
-                                <a href="#" class="btn gradient-bg mr-2">Donate Now</a>
+                                <a href="#" class="btn gradient-bg mr-2">Dona Ahora</a>
                             </div><!-- .entry-footer -->
                         </div><!-- .cause-content-wrap -->
 
@@ -315,16 +315,16 @@
                                     <span class="tip"></span>
                                 </div><!-- .tipWrap -->
 
-                                <span class="fill" data-percentage="83"></span>
+                                <span class="fill" data-percentage="65"></span>
                             </div><!-- .fund-raised-bar -->
 
                             <div class="fund-raised-details d-flex flex-wrap justify-content-between align-items-center">
                                 <div class="fund-raised-total mt-4">
-                                    Raised: $56 880
+                                    Recaudado: $65 000
                                 </div><!-- .fund-raised-total -->
 
                                 <div class="fund-raised-goal mt-4">
-                                    Goal: $70 000
+                                    Meta: $100 000
                                 </div><!-- .fund-raised-goal -->
                             </div><!-- .fund-raised-details -->
                         </div><!-- .fund-raised -->
@@ -340,7 +340,7 @@
         <div class="row">
             <div class="coL-12">
                 <div class="section-heading">
-                    <h2 class="entry-title">Our Causes</h2>
+                    <h2 class="entry-title">Nuestras Causas</h2>
                 </div><!-- .section-heading -->
             </div><!-- .col -->
         </div><!-- .row -->
@@ -622,7 +622,7 @@
         <div class="row align-items-end">
             <div class="coL-12 col-lg-6">
                 <div class="section-heading">
-                    <h2 class="entry-title">We love to help all the children that have problems in the world. After 15 years we have many goals achieved.</h2>
+                    <h2 class="entry-title">Nos encanta ayudar a todos los niños que tienen problemas en el mundo.</h2>
 
                     <p class="mt-5">Dolor sit amet, consectetur adipiscing elit. Mauris tempus vestib ulum mauris quis aliquam. Lorem ipsum dolor sit amet.</p>
                 </div><!-- .section-heading -->
