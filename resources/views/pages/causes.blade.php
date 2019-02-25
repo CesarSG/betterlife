@@ -1,11 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
+<body class="single-page causes-page">
   <div class="page-header">
       <div class="container">
           <div class="row">
               <div class="col-12">
-                  <h1>Our Causes</h1>
+                  <h1>Nuestras Causas</h1>
               </div><!-- .col -->
           </div><!-- .row -->
       </div><!-- .container -->
@@ -16,7 +17,7 @@
           <div class="row">
               <div class="col-12">
                   <div class="section-heading">
-                      <h2 class="entry-title">Featured Cause</h2>
+                      <h2 class="entry-title">Causas Destacadas</h2>
                   </div><!-- .section-heading -->
               </div><!-- .col -->
           </div><!-- .row -->
@@ -432,4 +433,6 @@
           </div><!-- .row -->
       </div><!-- .container -->
   </div><!-- .our-causes -->
+</body>
+
 @endsection

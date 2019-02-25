@@ -122,9 +122,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 d-flex flex-wrap justify-content-between align-items-center">
-                    <h2>Help us so we can help others</h2>
+                    <h2>Ayúdanos para poder ayudar a otros</h2>
 
-                    <a class="btn orange-border" href="#">Donate now</a>
+                    <a class="btn orange-border" href="#">Dona Ahora</a>
                 </div>
             </div>
         </div>

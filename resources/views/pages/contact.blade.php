@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<body class="single-page contact-page">
   <div class="page-header">
       <div class="container">
           <div class="row">
@@ -58,4 +59,6 @@
           </div><!-- .row -->
       </div><!-- .container -->
   </div>
+</body>
+
 @endsection
