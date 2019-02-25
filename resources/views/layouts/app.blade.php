@@ -63,7 +63,7 @@
                 <div class="row">
                     <div class="col-12 d-flex flex-wrap justify-content-between align-items-center">
                         <div class="site-branding d-flex align-items-center">
-                            <a class="d-block" href="{{ url('/') }}" rel="home"><img class="d-block" src="images/betterLogoLife.png" alt="logo"></a>
+                            <a class="d-block" href="{{ url('/') }}" rel="home"><img class="d-block" src="images/BetterLogo.png" alt="logo"></a>
                         </div><!-- .site-branding -->
 
                         <nav class="site-navigation d-flex justify-content-end align-items-center">
@@ -71,7 +71,7 @@
                                 <li class="current-menu-item"><a href="{{ url('/') }}">Inicio</a></li>
                                 <li><a href="{{ url('/nosotros') }}">Nosotros</a></li>
                                 <li><a href="{{ url('/causas') }}">Causas</a></li>
-                                <li><a href="{{ url('/galeria') }}">Galeria</a></li>
+                                <li><a href="{{ url('/galeria') }}">Galería</a></li>
                                 <li><a href="{{ url('/contacto') }}">Contacto</a></li>
                                 @guest
                                     <li class="nav-item">
@@ -128,7 +128,7 @@
                 <div class="row">
                     <div class="col-12 col-md-6 col-lg-3">
                         <div class="foot-about">
-                            <h2><a class="foot-logo" href="#"><img src="images/foot-logo.png" alt=""></a></h2>
+                            <h2><a class="foot-logo" href="#"><img src="images/foot-logoBetter.png" alt=""></a></h2>
 
                             <p>Lorem ipsum dolor sit amet, con sectetur adipiscing elit. Mauris temp us vestib ulum mauris.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempus vestib ulum mauris.Lorem ipsum dolo.</p>
 
@@ -144,22 +144,22 @@
                     </div><!-- .col -->
 
                     <div class="col-12 col-md-6 col-lg-3 mt-5 mt-md-0">
-                        <h2>Useful Links</h2>
+                        <h2>Enlace Útiles</h2>
 
                         <ul>
-                            <li><a href="#">Privacy Polticy</a></li>
-                            <li><a href="#">Become  a Volunteer</a></li>
-                            <li><a href="#">Donate</a></li>
-                            <li><a href="#">Testimonials</a></li>
-                            <li><a href="#">Causes</a></li>
-                            <li><a href="#">Portfolio</a></li>
-                            <li><a href="#">News</a></li>
+                            <li><a href="#">Aviso de Privacidad</a></li>
+                            <li><a href="#">Vuelvete un voluntario</a></li>
+                            <li><a href="#">Dona</a></li>
+                            <li><a href="#">Testimonios</a></li>
+                            <li><a href="#">Causas</a></li>
+                            <li><a href="#">Galeria</a></li>
+                            <li><a href="#">Noticias</a></li>
                         </ul>
                     </div><!-- .col -->
 
                     <div class="col-12 col-md-6 col-lg-3 mt-5 mt-md-0">
                         <div class="foot-latest-news">
-                            <h2>Latest News</h2>
+                            <h2>Últimas noticias</h2>
 
                             <ul>
                                 <li>
@@ -182,19 +182,19 @@
 
                     <div class="col-12 col-md-6 col-lg-3 mt-5 mt-md-0">
                         <div class="foot-contact">
-                            <h2>Contact</h2>
+                            <h2>Contacto</h2>
 
                             <ul>
                                 <li><i class="fa fa-phone"></i><span>+45 677 8993000 223</span></li>
-                                <li><i class="fa fa-envelope"></i><span>office@template.com</span></li>
-                                <li><i class="fa fa-map-marker"></i><span>Main Str. no 45-46, b3, 56832, Los Angeles, CA</span></li>
+                                <li><i class="fa fa-envelope"></i><span> contacto@betterlife.com</span></li>
+                                <li><i class="fa fa-map-marker"></i><span>Av. dirección, 56832, Guadalajara, MX</span></li>
                             </ul>
                         </div><!-- .foot-contact -->
 
                         <div class="subscribe-form">
                             <form class="d-flex flex-wrap align-items-center">
-                                <input type="email" placeholder="Your email">
-                                <input type="submit" value="send">
+                                <input type="email" placeholder="Correo">
+                                <input type="submit" value="enviar">
                             </form><!-- .flex -->
                         </div><!-- .search-widget -->
                     </div><!-- .col -->
