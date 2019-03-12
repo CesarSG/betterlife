@@ -69,10 +69,10 @@
                         <nav class="site-navigation d-flex justify-content-end align-items-center">
                             <ul class="d-flex flex-column flex-lg-row justify-content-lg-end align-content-center">
                                 <li class="current-menu-item"><a href="{{ url('/') }}">Inicio</a></li>
-                                <li><a href="{{ url('/nosotros') }}">Nosotros</a></li>
-                                <li><a href="{{ url('/causas') }}">Causas</a></li>
-                                <li><a href="{{ url('/galeria') }}">Galería</a></li>
-                                <li><a href="{{ url('/contacto') }}">Contacto</a></li>
+                                <li><a href="{{ route('about') }}">Nosotros</a></li>
+                                <li><a href="{{ route('causes') }}">Causas</a></li>
+                                <li><a href="{{ route('gallery') }}">Galería</a></li>
+                                <li><a href="{{ route('contact') }}">Contacto</a></li>
                                 @guest
                                     <li class="nav-item">
                                         <a style="color:#FFBB00;" class="nav-link" href="{{ route('login') }}">{{ __('Ingresa') }}</a>
