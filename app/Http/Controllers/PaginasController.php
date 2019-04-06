@@ -24,7 +24,19 @@ class PaginasController extends Controller
     function contact(){
         return view('pages.contact');
     }
-    function admin(){
+    function dashboard(){
         return view('admin.dash');
+    }
+    function user(){
+        return view('admin.user');
+    }
+    function tables(){
+        return view('admin.tables');
+    }
+    function notification(){
+        return view('admin.notification');
+    }
+    function entrar(){
+        return view('login.login');
     }
 }

@@ -21,7 +21,14 @@ Route::get('/causas', 'PaginasController@causes')->name('causes');
 Route::get('/galeria', 'PaginasController@gallery')->name('gallery');
 Route::get('/noticias', 'PaginasController@news')->name('news');
 Route::get('/contacto', 'PaginasController@contact')->name('contact');
-Route::get('/admin', 'PaginasController@admin')->name('admin');
+Route::get('/adminsss', 'PaginasController@admin')->name('admin');
+
+Route::get('/admin', 'PaginasController@dashboard')->name('dashboard');
+Route::get('/admin/usuario', 'PaginasController@user')->name('user');
+Route::get('/admin/tablas', 'PaginasController@tables')->name('tables');
+Route::get('/admin/notificacion', 'PaginasController@notification')->name('notification');
+
+Route::get('/entrar', 'PaginasController@entrar')->name('entrar');
 
 Auth::routes();
 
