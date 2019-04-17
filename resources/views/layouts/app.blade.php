@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
 
         <!-- FontAwesome CSS -->
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
 
         <!-- ElegantFonts CSS -->

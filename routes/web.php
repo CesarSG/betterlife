@@ -26,10 +26,11 @@ Route::get('/adminsss', 'PaginasController@admin')->name('admin');
 Route::get('/admin', 'PaginasController@dashboard')->name('dashboard');
 Route::get('/admin/usuario', 'PaginasController@user')->name('user');
 Route::get('/admin/tablas', 'PaginasController@tables')->name('tables');
+Route::get('/admin/team', 'PaginasController@team')->name('team');
 Route::get('/admin/notificacion', 'PaginasController@notification')->name('notification');
 
 Route::get('/entrar', 'PaginasController@entrar')->name('entrar');
 
-Auth::routes();
+Auth::routes(['verify'=>true]);
 
 Route::get('/home', 'HomeController@index')->name('home');

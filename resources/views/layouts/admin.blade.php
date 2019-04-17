@@ -90,12 +90,12 @@
                   <span class="d-lg-none d-md-block">Search</span>
                 </button>
               </li>
-              <li class="dropdown nav-item">
+              <!-- <li class="dropdown nav-item">
                 <a href="javascript:void(0)" class="dropdown-toggle nav-link" data-toggle="dropdown">
                   <div class="notification d-none d-lg-block d-xl-block"></div>
                   <i class="tim-icons icon-sound-wave"></i>
                   <p class="d-lg-none">
-                    Notifications
+                    Notificationsgh
                   </p>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-right dropdown-navbar">
@@ -115,6 +115,9 @@
                     <a href="javascript:void(0)" class="nav-item dropdown-item">Another one</a>
                   </li>
                 </ul>
+              </li> -->
+              <li class="nav-item">
+                <a class="nav-link" href="#">{{Auth::user()->name }}</a>
               </li>
               <li class="dropdown nav-item">
                 <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
@@ -123,19 +126,26 @@
                   </div>
                   <b class="caret d-none d-lg-block d-xl-block"></b>
                   <p class="d-lg-none">
-                    Log out
+                    Hola
                   </p>
                 </a>
                 <ul class="dropdown-menu dropdown-navbar">
-                  <li class="nav-link">
+                  <!-- <li class="nav-link">
                     <a href="javascript:void(0)" class="nav-item dropdown-item">Profile</a>
                   </li>
                   <li class="nav-link">
                     <a href="javascript:void(0)" class="nav-item dropdown-item">Settings</a>
                   </li>
-                  <li class="dropdown-divider"></li>
+                  <li class="dropdown-divider"></li> -->
                   <li class="nav-link">
-                    <a href="javascript:void(0)" class="nav-item dropdown-item">Log out</a>
+                    <a class="dropdown-item" href="{{ route('logout') }}"
+                       onclick="event.preventDefault();
+                                     document.getElementById('logout-form').submit();">
+                        {{ __('Logout') }}
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
                   </li>
                 </ul>
               </li>
@@ -171,7 +181,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="javascript:void(0)" class="nav-link">
+              <a href="{{ route('team') }}" class="nav-link">
                 About Us
               </a>
             </li>
