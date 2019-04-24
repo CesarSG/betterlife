@@ -18,10 +18,13 @@ Route::get('/galeria', 'PaginasController@gallery')->name('gallery');
 Route::get('/noticias', 'PaginasController@news')->name('news');
 Route::get('/contacto', 'PaginasController@contact')->name('contact');
 Route::get('/home', 'HomeController@index')->name('home');
+
 Route::group(['prefix'=>'admin'], function(){
   Route::get('', 'PaginasController@dashboard')->name('dashboard');
   Route::get('usuario', 'PaginasController@user')->name('user');
   Route::get('tablas', 'PaginasController@tables')->name('tables');
   Route::get('team', 'PaginasController@team')->name('team');
   Route::get('notificacion', 'PaginasController@notification')->name('notification');
+  Route::get('evento', 'PaginasController@event')->name('event');
+  Route::get('paneles', 'PaginasController@panels')->name('panels');
 });

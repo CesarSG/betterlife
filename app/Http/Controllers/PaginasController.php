@@ -44,7 +44,13 @@ class PaginasController extends Controller
     function notification(){
         return view('admin.notification');
     }
+    function event(){
+        return view('admin.event');
+    }
     function entrar(){
         return view('login.login');
+    }
+    function panels(){
+      return view('admin.panels');
     }
 }

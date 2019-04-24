@@ -84,23 +84,21 @@
                                         </li>
                                     @endif
                                 @else
-                                    <li class="nav-item dropdown">
-                                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                            {{ Auth::user()->name }} <span class="caret"></span>
-                                        </a>
-                                        <ul>
-                                          <li>
-                                            <a class="dropdown-item" href="{{ route('logout') }}"
-                                               onclick="event.preventDefault();
-                                                             document.getElementById('logout-form').submit();">
-                                                {{ __('Logout') }}
-                                            </a>
-                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                                @csrf
-                                            </form>
-                                          </li>
-                                        </ul>
-                                    </li>
+                                  <li class="nav-item">
+                                  <a class="nav-link" href="#" role="button" style="color:#FFBB00;">
+                                    {{ Auth::user()->name }}
+                                  </a>
+                                  </li>
+                                  <li class="nav-item">
+                                    <a class="nav-link" style="color:#FFBB00;" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                                  document.getElementById('logout-form').submit();">
+                                     {{ __('Logout') }}
+                                    </a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                  </li>
                                 @endguest
                             </ul>
                         </nav><!-- .site-navigation -->
@@ -204,7 +202,6 @@
         </div><!-- .footer-widgets -->
 
     </footer><!-- .site-footer -->
-
 
     <script type='text/javascript' src='{{ asset('js/jquery.js') }}'></script>
     <script type='text/javascript' src='{{ asset('js/jquery.collapsible.min.js') }}'></script>
