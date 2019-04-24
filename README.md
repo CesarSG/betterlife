@@ -16,6 +16,7 @@ composer install
 ## Programadores
 
 * Cesar Sevilla Galindo
+* Misael Aguas Jimenez
 
 ## URL GitHub
 * https://github.com/CesarSG/betterlife

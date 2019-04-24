@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 class PaginasController extends Controller
 {
+    // public function __construct()
+    // {
+    //   $this->middleware(['auth','verified']);
+    // }
+
     function index(){
         return view('index');
     }
@@ -29,6 +34,9 @@ class PaginasController extends Controller
     }
     function user(){
         return view('admin.user');
+    }
+    function team(){
+        return view('admin.team');
     }
     function tables(){
         return view('admin.tables');
