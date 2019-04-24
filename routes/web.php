@@ -27,6 +27,8 @@ Route::get('/admin', 'PaginasController@dashboard')->name('dashboard');
 Route::get('/admin/usuario', 'PaginasController@user')->name('user');
 Route::get('/admin/tablas', 'PaginasController@tables')->name('tables');
 Route::get('/admin/notificacion', 'PaginasController@notification')->name('notification');
+Route::get('/admin/evento', 'PaginasController@event')->name('event');
+Route::get('/admin/paneles', 'PaginasController@panels')->name('panels');
 
 Route::get('/entrar', 'PaginasController@entrar')->name('entrar');
 
