@@ -57,6 +57,12 @@
             </a>
           </li>
           <li>
+            <a href="{{ route('register.user') }}">
+              <i class="tim-icons icon-single-02"></i>
+              <p>Crear Usuario</p>
+            </a>
+          </li>
+          <li>
             <a href="{{ route('tables') }}">
               <i class="tim-icons icon-puzzle-10"></i>
               <p>Table List</p>
@@ -127,7 +133,7 @@
                   </div>
                   <b class="caret d-none d-lg-block d-xl-block"></b>
                   <p class="d-lg-none">
-                    Hola
+                    {{Auth::user()->name }}
                   </p>
                 </a>
                 <ul class="dropdown-menu dropdown-navbar">
@@ -174,7 +180,7 @@
       </div>
       <!-- End Navbar -->
       <div class="content">
-
+    
         @yield('section')
 
       </div>

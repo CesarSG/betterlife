@@ -7,14 +7,15 @@
                     <i class="tim-icons icon-simple-remove"></i>
                   </button>
                   <span>
-                    <b> Success - </b> {{session('message')}}"</span>
+                    <b> Success - </b> {{session('message')}}</span>
                 </div>
 @endif
 <div class="row">
           <div class="col-md-8">
             <div class="card">
               <div class="card-header">
-                <h5 class="title">Editar Perfil</h5>
+                <h4 class="title">Informacion de Perfil</h4>
+                <p class="category">Configuracion</p>
               </div>
               <div class="card-body">
                 <form method="POST" action="{{ route('user.update') }}">
@@ -34,7 +35,7 @@
                     <div class="col-md-6 pl-md-1">
                       <div class="form-group">
                         <label>Apellido</label>
-                        <input name="apellido" type="text" class="form-control" placeholder="Last Name" value="{{Auth::user()->last_name}}">
+                        <input name="last_name" type="text" class="form-control" placeholder="Last Name" value="{{Auth::user()->last_name}}">
                       </div>
                     </div>
                   </div>
