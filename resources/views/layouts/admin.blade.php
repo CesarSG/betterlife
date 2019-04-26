@@ -22,6 +22,7 @@
 </head>
 
 <body class="">
+
   <div class="wrapper">
     <div class="sidebar">
       <!--
@@ -137,6 +138,11 @@
                     <a href="javascript:void(0)" class="nav-item dropdown-item">Settings</a>
                   </li>
                   <li class="dropdown-divider"></li> -->
+                  <li class="nav-link">
+                    <a class="dropdown-item" href="{{route('config')}}">
+                        Configuracion
+                    </a>
+                  </li>
                   <li class="nav-link">
                     <a class="dropdown-item" href="{{ route('logout') }}"
                        onclick="event.preventDefault();
