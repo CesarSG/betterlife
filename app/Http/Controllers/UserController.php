@@ -3,15 +3,23 @@
 namespace BetterLife\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use BetterLife\User;
-use BetterLife\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Validator;
-use Illuminate\Foundation\Auth\RegistersUsers;
+
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
+
+
 
 
 class UserController extends Controller
 {
+  public function __construct()
+  {
+      $this->middleware(['auth','verified']);
+  }
+  
   public function config()
   {
     return view('user.config');
@@ -77,9 +85,25 @@ class UserController extends Controller
     $user->username = $username;
     $user->email = $email;
 
+    //subir imagen de Usuario
+    $image_path = $request->file('image_path');
+    if($image_path){
+
+      $image_path_name = time().$image_path->getClientOriginalName();
+
+      Storage::disk('users')->put($image_path_name, File::get($image_path));
+      $user->image = $image_path_name;
+    }
+
     //ejecucion de consulta a la DB
     $user->update();
     return redirect()->route('config')
                       ->with(['message'=>'Informacion actualizada correctamente']);
   }
+
+  public function getImage($filename){
+    $file = Storage::disk('users')->get($filename);
+    return new Response($file, 200);
+  }
+
 }

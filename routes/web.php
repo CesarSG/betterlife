@@ -21,6 +21,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/configuracion', 'UserController@config')->name('config');
 Route::post('/user/update', 'UserController@update')->name('user.update');
 
+Route::get('/user/avatar/{filename}', 'UserController@getImage')->name('user.avatar');
+
 Route::get('/registro', 'UserController@register')->name('register.user')->middleware('auth', 'role');
 Route::post('/user/register', 'UserController@create')->name('create.user');
 

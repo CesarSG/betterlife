@@ -18,7 +18,7 @@
                 <p class="category">Configuracion</p>
               </div>
               <div class="card-body">
-                <form method="POST" action="{{ route('user.update') }}">
+                <form method="POST" action="{{ route('user.update') }}" enctype="multipart/form-data">
                   @csrf
                   <div class="row">
                     <div class="col-md-6 pr-md-1">
@@ -36,6 +36,11 @@
                       <div class="form-group">
                         <label>Apellido</label>
                         <input name="last_name" type="text" class="form-control" placeholder="Last Name" value="{{Auth::user()->last_name}}">
+                        @if ($errors->has('last_name'))
+                        <p class="text-danger">
+                        {{ $errors->first('last_name') }}
+                      </p>
+            						@endif
                       </div>
                     </div>
                   </div>
@@ -63,7 +68,19 @@
                       </div>
                     </div>
                   </div>
-
+                  <div class="row">
+                    <div class="col-md-12 ">
+                      <label>Avatar</label>
+                      <div class="form-group">
+                        <input name="image_path" type="file" class="form-control" placeholder="Company" value="">
+                      </div>
+                      @if ($errors->has('image_path'))
+                      <p class="text-danger">
+                      {{ $errors->first('image_path') }}
+                    </p>
+          						@endif
+                    </div>
+                  </div>
                   <div class="card-footer">
                     <button type="submit" class="btn btn-fill btn-primary">Actualizar información</button>
                   </div>
@@ -81,7 +98,7 @@
                     <div class="block block-three"></div>
                     <div class="block block-four"></div>
                     <a href="javascript:void(0)">
-                      <img class="avatar" src="../assets/img/emilyz.jpg" alt="...">
+                      @include('includes.avatar')
                       <h5 class="title">{{Auth::user()->name .' '. Auth::user()->last_name}}</h5>
                     </a>
                     <p class="description">
