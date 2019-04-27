@@ -78,7 +78,7 @@
                     <div class="col-md-4 pr-md-1">
                       <div class="form-group">
                         <label>{{ __('Password') }}</label>
-                        <input name="username" type="password" class="form-control" value="">
+                        <input name="password" type="password" class="form-control" value="">
                         @if ($errors->has('password'))
                         <p class="text-danger">
                         {{ $errors->first('password') }}

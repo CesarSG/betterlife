@@ -1,14 +1,14 @@
 @extends('layouts.admin')
 
 @section('section')
+
 @if(session('message'))
 <div class="alert alert-success">
-                  <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
-                    <i class="tim-icons icon-simple-remove"></i>
-                  </button>
-                  <span>
-                    <b> Success - </b> {{session('message')}}</span>
-                </div>
+  <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
+    <i class="tim-icons icon-simple-remove"></i>
+  </button>
+  <span><b> Success - </b> {{session('message')}}</span>
+</div>
 @endif
 <div class="row">
           <div class="col-md-8">

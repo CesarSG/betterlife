@@ -44,6 +44,8 @@
               <p>Dashboard</p>
             </a>
           </li>
+
+          @can('create-user')
           <li>
             <a href="{{ route('notification') }}">
               <i class="tim-icons icon-bell-55"></i>
@@ -68,6 +70,8 @@
               <p>Table List</p>
             </a>
           </li>
+          @endcan
+
         </ul>
       </div>
     </div>
@@ -180,7 +184,7 @@
       </div>
       <!-- End Navbar -->
       <div class="content">
-    
+
         @yield('section')
 
       </div>

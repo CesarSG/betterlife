@@ -21,8 +21,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/configuracion', 'UserController@config')->name('config');
 Route::post('/user/update', 'UserController@update')->name('user.update');
 
-Route::get('/registro', 'UserController@register')->name('register.user');
+Route::get('/registro', 'UserController@register')->name('register.user')->middleware('auth', 'role');
 Route::post('/user/register', 'UserController@create')->name('create.user');
+
 
 Route::group(['prefix'=>'admin'], function(){
   Route::get('', 'PaginasController@dashboard')->name('dashboard');
