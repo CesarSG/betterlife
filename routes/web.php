@@ -20,6 +20,7 @@ Route::get('/contacto', 'PaginasController@contact')->name('contact');
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['prefix'=>'admin'], function(){
+  Route::resource('/causa', 'CauseController');
   Route::get('', 'PaginasController@dashboard')->name('dashboard');
   Route::get('usuario', 'PaginasController@user')->name('user');
   Route::get('tablas', 'PaginasController@tables')->name('tables');
