@@ -18,7 +18,7 @@
   <link href="{{ asset('css/admin/black-dashboard.css?v=1.0.0') }}" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="{{ asset('css/demo/demo.css') }}" rel="stylesheet" />
-  <link rel="shortcut icon" type="image/png" href="images/icono.png"/>
+  <link rel="shortcut icon" type="image/png" href="../images/icono.png"/>
 </head>
 
 <body class="">
@@ -128,7 +128,7 @@
               <li class="dropdown nav-item">
                 <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
                   <div class="photo">
-                    <img src="images/anime3.png" alt="Profile Photo">
+                    <img src="../images/anime3.png" alt="Profile Photo">
                   </div>
                   <b class="caret d-none d-lg-block d-xl-block"></b>
                   <p class="d-lg-none">
