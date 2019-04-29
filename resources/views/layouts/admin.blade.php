@@ -40,13 +40,25 @@
           <li>
             <a href="{{ route('dashboard') }}">
               <i class="tim-icons icon-chart-pie-36"></i>
-              <p>Dashboard</p>
+              <p>Inicio</p>
             </a>
           </li>
           <li>
             <a href="{{ route('causa.index') }}">
               <i class="tim-icons icon-heart-2"></i>
               <p>Causas</p>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="tim-icons icon-components"></i>
+              <p>Eventos</p>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="tim-icons icon-money-coins"></i>
+              <p>Donaciones</p>
             </a>
           </li>
           <li>
