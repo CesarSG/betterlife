@@ -29,9 +29,9 @@ class PaginasController extends Controller
     function contact(){
         return view('pages.contact');
     }
-    function dashboard(){
-        return view('admin.dash');
-    }
+    // function dashboard(){
+    //     return view('admin.dash');
+    // }
     function user(){
         return view('admin.user');
     }

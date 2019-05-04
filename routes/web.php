@@ -27,7 +27,7 @@ Route::post('/user/register', 'UserController@create')->name('create.user');
 
 
 Route::group(['prefix'=>'admin'], function(){
-  Route::get('', 'PaginasController@dashboard')->name('dashboard');
+  // Route::get('', 'PaginasController@dashboard')->name('dashboard')->middleware('verified');
   Route::get('usuario', 'PaginasController@user')->name('user');
   Route::get('tablas', 'PaginasController@tables')->name('tables');
   Route::get('team', 'PaginasController@team')->name('team');

@@ -19,7 +19,7 @@ class UserController extends Controller
   {
       $this->middleware(['auth','verified']);
   }
-  
+
   public function config()
   {
     return view('user.config');
@@ -40,6 +40,13 @@ class UserController extends Controller
        */
       protected function create(Request $request)
       {
+
+        $validate = $this->validate($request, [
+          'username' => ['required', 'string', 'max:50','unique'],
+          'name' => ['required', 'string', 'max:255'],
+          'last_name' => ['string', 'max:100'],
+          'email' => ['required', 'string', 'email', 'max:255', 'unique'],
+        ]);
 
         //datos del formulario
         $name = $request -> input('name');
