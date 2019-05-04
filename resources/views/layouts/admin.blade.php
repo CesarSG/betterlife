@@ -45,7 +45,7 @@
             </a>
           </li>
 
-          @can('create-user')
+          @can('acces-admin')
           <li>
             <a href="{{ route('notification') }}">
               <i class="tim-icons icon-bell-55"></i>
