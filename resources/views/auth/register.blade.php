@@ -38,6 +38,23 @@
     							<div class="alert-validate" data-validate = "{{ $errors->first('name') }}"></div>
     						@endif
     					</div>
+							<div class="wrap-input100 validate-input m-b-26">
+    						<span class="label-input100">Apellido</span>
+    						<input class="input100" value="{{ old('last_name') }}" type="text" name="last_name">
+    						<span class="focus-input100"></span>
+    						@if ($errors->has('last_name'))
+    							<div class="alert-validate" data-validate = "{{ $errors->first('last_name') }}"></div>
+    						@endif
+    					</div>
+
+							<div class="wrap-input100 validate-input m-b-26">
+    						<span class="label-input100">User Name</span>
+    						<input class="input100" value="{{ old('username') }}" type="text" name="username">
+    						<span class="focus-input100"></span>
+    						@if ($errors->has('username'))
+    							<div class="alert-validate" data-validate = "{{ $errors->first('username') }}"></div>
+    						@endif
+    					</div>
 
 						<div class="wrap-input100 validate-input m-b-26">
 							<span class="label-input100">{{ __('E-Mail Address')}}</span>
