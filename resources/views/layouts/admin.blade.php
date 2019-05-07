@@ -21,12 +21,7 @@
   <link rel="shortcut icon" type="image/png" href="images/icono.png"/>
 </head>
 
-<<<<<<< HEAD
 <body class="white-content">
-=======
-<body class="">
-
->>>>>>> 11a56ed9e3e527b28221342a0db39c646dd556ca
   <div class="wrapper">
     <div class="sidebar">
       <!--

@@ -29,11 +29,7 @@ Route::post('/user/register', 'UserController@create')->name('create.user');
 
 Route::group(['prefix'=>'admin'], function(){
   Route::resource('causa', 'CauseController');
-<<<<<<< HEAD
-  Route::get('', 'PaginasController@dashboard')->name('dashboard');
-=======
   // Route::get('', 'PaginasController@dashboard')->name('dashboard')->middleware('verified');
->>>>>>> 11a56ed9e3e527b28221342a0db39c646dd556ca
   Route::get('usuario', 'PaginasController@user')->name('user');
   Route::get('tablas', 'PaginasController@tables')->name('tables');
   Route::get('team', 'PaginasController@team')->name('team');
