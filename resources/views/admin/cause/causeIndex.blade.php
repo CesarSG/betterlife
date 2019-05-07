@@ -1,6 +1,13 @@
 @extends('layouts.admin-layout')
-
 @section('section')
+@if(session('message'))
+<div class="alert alert-success">
+  <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
+    <i class="tim-icons icon-simple-remove"></i>
+  </button>
+  <span><b> Success - </b> {{session('message')}}</span>
+</div>
+@endif
   <div class="col-md-12">
     <div class="card">
       <div class="card-header">
@@ -38,12 +45,16 @@
                   </div>
                 </td>
                 <td class="td-actions text-center">
-                <button type="button" rel="tooltip" class="btn btn-success btn-sm btn-icon">
-                    <a href="{{ route('causa.edit', $cause->id) }}" style="color:white;" class="tim-icons icon-settings"></a>
-                </button>
-                <button type="button" rel="tooltip" class="btn btn-danger btn-sm btn-icon">
-                    <a href="{{ route('causa.destroy', $cause->id) }}" style="color:white;" class="tim-icons icon-simple-remove"></a>
-                </button>
+                <form action="{{ route('causa.destroy', $cause->id) }}" method="POST">
+                    <button type="button" rel="tooltip" class="btn btn-success btn-sm btn-icon">
+                      <a href="{{ route('causa.edit', $cause->id) }}" style="color:white;" class="tim-icons icon-settings"></a>
+                    </button>
+                      @csrf
+                      @method('DELETE')
+                    <button type="submit" rel="tooltip" class="btn btn-danger btn-sm btn-icon">
+                      <a style="color:white;" class="tim-icons icon-simple-remove"></a>
+                    </button>
+                </form>
               </td>
               </tr>
               @endforeach

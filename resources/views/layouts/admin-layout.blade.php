@@ -38,7 +38,7 @@
         </div>
         <ul class="nav">
           <li>
-            <a href="{{ route('dashboard') }}">
+            <a href="{{ route('home') }}">
               <i class="tim-icons icon-chart-pie-36"></i>
               <p>Inicio</p>
             </a>
@@ -140,11 +140,12 @@
               <li class="dropdown nav-item">
                 <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
                   <div class="photo">
-                    <img src="../images/anime3.png" alt="Profile Photo">
+                    @include('includes.avatar')
+                    <!-- <img src="images/anime3.png" alt="Profile Photo"> -->
                   </div>
                   <b class="caret d-none d-lg-block d-xl-block"></b>
                   <p class="d-lg-none">
-                    Hola
+                    {{Auth::user()->name }}
                   </p>
                 </a>
                 <ul class="dropdown-menu dropdown-navbar">
@@ -155,6 +156,11 @@
                     <a href="javascript:void(0)" class="nav-item dropdown-item">Settings</a>
                   </li>
                   <li class="dropdown-divider"></li> -->
+                  <li class="nav-link">
+                    <a class="dropdown-item" href="{{route('config')}}">
+                        Configuracion
+                    </a>
+                  </li>
                   <li class="nav-link">
                     <a class="dropdown-item" href="{{ route('logout') }}"
                        onclick="event.preventDefault();
