@@ -11,17 +11,29 @@
 |
 */
 Auth::routes(['verify'=>true]);
+Route::get('/home', 'HomeController@index')->name('home');
+
 Route::get('/', 'PaginasController@index')->name('index');
 Route::get('/nosotros', 'PaginasController@about')->name('about');
 Route::get('/causas', 'PaginasController@causes')->name('causes');
 Route::get('/galeria', 'PaginasController@gallery')->name('gallery');
 Route::get('/noticias', 'PaginasController@news')->name('news');
 Route::get('/contacto', 'PaginasController@contact')->name('contact');
-Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/configuracion', 'UserController@config')->name('config');
+Route::post('/user/update', 'UserController@update')->name('user.update');
+Route::get('/user/avatar/{filename}', 'UserController@getImage')->name('user.avatar');
+Route::get('/registro', 'UserController@register')->name('register.user')->middleware('auth', 'role');
+Route::post('/user/register', 'UserController@create')->name('create.user');
+
 
 Route::group(['prefix'=>'admin'], function(){
   Route::resource('causa', 'CauseController');
+<<<<<<< HEAD
   Route::get('', 'PaginasController@dashboard')->name('dashboard');
+=======
+  // Route::get('', 'PaginasController@dashboard')->name('dashboard')->middleware('verified');
+>>>>>>> 11a56ed9e3e527b28221342a0db39c646dd556ca
   Route::get('usuario', 'PaginasController@user')->name('user');
   Route::get('tablas', 'PaginasController@tables')->name('tables');
   Route::get('team', 'PaginasController@team')->name('team');

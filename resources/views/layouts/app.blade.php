@@ -85,7 +85,7 @@
                                     @endif
                                 @else
                                   <li class="nav-item">
-                                  <a class="nav-link" href="#" role="button" style="color:#FFBB00;">
+                                  <a class="nav-link" href="{{route('home')}}" role="button" style="color:#FFBB00;">
                                     {{ Auth::user()->name }}
                                   </a>
                                   </li>

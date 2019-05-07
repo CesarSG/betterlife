@@ -46,7 +46,8 @@ class CauseController extends Controller
       $cause->current_money = 0;
       $cause->save();
 
-      return redirect()->route('causa.index');
+      return redirect()->route('causa.index')
+                        ->with(['message'=>'Causa registrada correctamente']);
     }
 
     /**
@@ -66,18 +67,11 @@ class CauseController extends Controller
      * @param  \BetterLife\Cause  $cause
      * @return \Illuminate\Http\Response
      */
-    // public function edit(Cause $cause)
-    // {
-    //     //dd($cause);
-    //     $causes = Cause::findOrFail($cause);
-    //     dd($cause);
-    //     return view('admin.cause.causeForm', compact('causes'));
-    // }
-
-    public function edit($id){
-      //dd($id);
-      $cause = Cause::findOrFail($id);
-      return view('admin.cause.causeForm', compact('cause'));
+    public function edit($id)
+    {
+        //dd($cause);
+        $cause = Cause::findOrFail($id);
+        return view('admin.cause.causeForm', compact('cause'));
     }
 
     /**
@@ -87,11 +81,17 @@ class CauseController extends Controller
      * @param  \BetterLife\Cause  $cause
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Cause $cause)
+    public function update(Request $request, $id)
     {
-      //dd($request->all());
-      $cause->update($request->all());
-      return redirect()->route('causa.index', $cause->id);
+      $cause= Cause::findOrFail($id);
+      $cause->name = $request->input('name');
+      $cause->description = $request->input('description');
+      $cause->goal = $request->input('goal');
+      $cause->status = true;
+      $cause->current_money = 0;
+      $cause->update();
+      return redirect()->route('causa.index')
+                        ->with(['message'=>'Informacion actualizada correctamente']);
     }
 
     /**
@@ -100,11 +100,11 @@ class CauseController extends Controller
      * @param  \BetterLife\Cause  $cause
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Cause $cause)
+    public function destroy($id)
     {
-      dd($cause);
-      $cause->delete();
-      return redirect()->route('causa.index');
+      Cause::destroy($id);
+        return redirect()->route('causa.index')
+                        ->with(['message'=>'Registro eliminado correctamente']);
     }
     // public function destroy($id){
     //   $cause = Cause::findOrFail($id);

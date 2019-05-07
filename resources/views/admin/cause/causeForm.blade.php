@@ -14,9 +14,15 @@
 
           <div class="col-md-12">
             <div class="card">
+              @if (@isset($cause))
               <div class="card-header">
-                <h4 class="card-title">Registrar una causa</h4>
+                <h4 class="card-title">Actualicion de causa</h4>
               </div>
+              @else
+              <div class="card-header">
+                <h4 class="card-title">Registro de causa</h4>
+              </div>
+              @endif
               <div class="card-body">
                 @if (@isset($cause))
                 <form action="{{ route('causa.update', $cause->id) }}" method="POST">
@@ -36,8 +42,8 @@
                   <div class="row">
                     <div class="col-sm-12">
                       <div class="form-group">
-                          <label>Descripcion de la causa</label>
-                        <textarea rows="3" cols="80" name="description" class="form-control" placeholder="Aqui puede ir la descripcion de la causa.">{{ isset($cause) ? $cause->description : '' }}</textarea>
+                          <label>Descripción de la causa</label>
+                              <textarea rows="3" cols="80" name="description" value="" class="form-control" placeholder="Aqui puede ir la descripcion de la causa.">{{ isset($cause) ? $cause->description : '' }}{{ old('description') }}</textarea>
                       </div>
                     </div>
                   </div>
