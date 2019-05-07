@@ -66,10 +66,18 @@ class CauseController extends Controller
      * @param  \BetterLife\Cause  $cause
      * @return \Illuminate\Http\Response
      */
-    public function edit(Cause $cause)
-    {
-        //dd($cause);
-        return view('admin.cause.causeForm', compact('cause','id'));
+    // public function edit(Cause $cause)
+    // {
+    //     //dd($cause);
+    //     $causes = Cause::findOrFail($cause);
+    //     dd($cause);
+    //     return view('admin.cause.causeForm', compact('causes'));
+    // }
+
+    public function edit($id){
+      //dd($id);
+      $cause = Cause::findOrFail($id);
+      return view('admin.cause.causeForm', compact('cause'));
     }
 
     /**
@@ -81,8 +89,9 @@ class CauseController extends Controller
      */
     public function update(Request $request, Cause $cause)
     {
+      //dd($request->all());
       $cause->update($request->all());
-      return redirect()->route('causa.show', $cause->id);
+      return redirect()->route('causa.index', $cause->id);
     }
 
     /**
@@ -97,4 +106,8 @@ class CauseController extends Controller
       $cause->delete();
       return redirect()->route('causa.index');
     }
+    // public function destroy($id){
+    //   $cause = Cause::findOrFail($id);
+    //   dd($cause);
+    // }
 }

@@ -29,7 +29,7 @@
                     <div class="col-sm-12">
                       <div class="form-group">
                           <label>Nombre del la causa</label>
-                        <input type="text" class="form-control" name="name" value="{{ isset($cause) ? $cause->name : '' }}{{ old('name') }}"  placeholder="Ingresa el nombre del evento">
+                        <input type="text" class="form-control" name="name" value="{{ isset($cause) ? $cause->name : '' }}{{ old('name  ') }}"  placeholder="Ingresa el nombre del evento">
                       </div>
                     </div>
                   </div>
@@ -37,7 +37,7 @@
                     <div class="col-sm-12">
                       <div class="form-group">
                           <label>Descripcion de la causa</label>
-                        <textarea rows="3" cols="80" name="description" value="{{ isset($cause) ? $cause->description : '' }}{{ old('description') }}" class="form-control" placeholder="Aqui puede ir la descripcion de la causa."></textarea>
+                        <textarea rows="3" cols="80" name="description" class="form-control" placeholder="Aqui puede ir la descripcion de la causa.">{{ isset($cause) ? $cause->description : '' }}</textarea>
                       </div>
                     </div>
                   </div>
