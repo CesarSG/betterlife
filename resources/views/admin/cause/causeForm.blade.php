@@ -35,7 +35,7 @@
                     <div class="col-sm-12">
                       <div class="form-group">
                           <label>Nombre del la causa</label>
-                        <input type="text" class="form-control" name="name" value="{{ isset($cause) ? $cause->name : '' }}{{ old('name') }}"  placeholder="Ingresa el nombre del evento">
+                        <input type="text" class="form-control" name="name" value="{{ isset($cause) ? $cause->name : '' }}{{ old('name  ') }}"  placeholder="Ingresa el nombre del evento">
                       </div>
                     </div>
                   </div>

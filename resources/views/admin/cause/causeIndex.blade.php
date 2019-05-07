@@ -15,7 +15,7 @@
       </div>
       <div class="card-body">
         <div class="table-responsive ps">
-          <table class="table table-striped">
+          <table class="table tablesorter">
             <thead class="text-primary">
               <tr>
                 <th class="text-center">#</th>
@@ -39,7 +39,7 @@
                   <div class="progress-container">
                     <span class="progress-badge">$ {{ $cause->current_money}}</span>
                     <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 85%;">
+                      <div class="progress-bar" role="progressbar" style="width: 1%;">
                       </div>
                     </div>
                   </div>
