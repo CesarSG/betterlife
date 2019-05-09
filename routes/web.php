@@ -10,6 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Auth::routes(['verify'=>true]);
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -27,7 +28,7 @@ Route::get('/registro', 'UserController@register')->name('register.user')->middl
 Route::post('/user/register', 'UserController@create')->name('create.user');
 
 
-Route::group(['prefix'=>'admin'], function(){
+Route::group(['prefix'=>'admin',  'middleware' => 'auth'], function(){
   Route::resource('causa', 'CauseController');
   // Route::get('', 'PaginasController@dashboard')->name('dashboard')->middleware('verified');
   Route::get('usuario', 'PaginasController@user')->name('user');

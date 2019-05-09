@@ -3,6 +3,7 @@
 namespace BetterLife\Http\Controllers;
 
 use BetterLife\Donation;
+use BetterLife\Cause;
 use Illuminate\Http\Request;
 
 class DonationController extends Controller
@@ -35,7 +36,16 @@ class DonationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+      $cause = Cause();
+      $donation = new Donation();
+      $donation->name = $request->input('name');
+      $donation->description = $request->input('description');
+      $donation->status = "Activo";
+      $donation->save();
+
+      $cause->det_donations()->attach($donation->id, ['staus' => 'succes']);
+      return redirect()->route('donations.index');
     }
 
     /**

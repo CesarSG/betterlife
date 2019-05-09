@@ -5,6 +5,7 @@ namespace BetterLife\Http\Controllers;
 use BetterLife\Cause;
 use Illuminate\Http\Request;
 
+
 class CauseController extends Controller
 {
     /**
@@ -14,7 +15,9 @@ class CauseController extends Controller
      */
     public function index()
     {
-      $causes = Cause::all();
+      // $causes = Cause::all();
+
+      $causes = Cause::paginate(5);
       return view('admin.cause.causeIndex', compact('causes'));
     }
 
@@ -37,6 +40,11 @@ class CauseController extends Controller
     public function store(Request $request)
     {
       //dd($request->all());
+
+      $validate = $this->validate($request, [
+        'name' => ['required', 'string', 'max:255'],
+        'description' => ['required', 'string', 'max:255'],
+      ]);
 
       $cause = new Cause();
       $cause->name = $request->input('name');
@@ -83,6 +91,11 @@ class CauseController extends Controller
      */
     public function update(Request $request, $id)
     {
+      $validate = $this->validate($request, [
+        'name' => ['required', 'string', 'max:255'],
+        'description' => ['required', 'string', 'max:255'],
+      ]);
+
       $cause= Cause::findOrFail($id);
       $cause->name = $request->input('name');
       $cause->description = $request->input('description');
@@ -102,7 +115,9 @@ class CauseController extends Controller
      */
     public function destroy($id)
     {
-      Cause::destroy($id);
+      $cause = Cause::find($id);
+      $cause->delete();
+      // Cause::destroy($id);
         return redirect()->route('causa.index')
                         ->with(['message'=>'Registro eliminado correctamente']);
     }

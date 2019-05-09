@@ -8,12 +8,17 @@
   <span><b> Success - </b> {{session('message')}}</span>
 </div>
 @endif
+
   <div class="col-md-12">
     <div class="card">
       <div class="card-header">
         <h4 class="card-title">Causas</h4>
       </div>
       <div class="card-body">
+
+        <form class="" action="index.html" method="post">
+          <label for="filtro_nombre"></label>
+        </form>
         <div class="table-responsive ps">
           <table class="table table-striped">
             <thead class="text-primary">
@@ -28,6 +33,7 @@
               </tr>
             </thead>
             <tbody>
+              @if(isset($causes))
               @foreach ($causes as $cause)
               <tr>
                 <td class="text-center">{{ $cause->id}}</td>
@@ -58,8 +64,12 @@
               </td>
               </tr>
               @endforeach
+              @else
+              <p>tabla vacia</p>
+              @endif
               </tbody>
             </table>
+            {{$causes->links()}}
             <a href="{{ route('causa.create') }}" class="btn-round float-right mr-5 btn btn-info">Crear una nueva causa <i href="{{ route('causa.create') }}"  class="tim-icons icon-minimal-right"></i></a>
             <div class="ps__rail-x" style="left: 0px; bottom: 0px;">
               <div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>
