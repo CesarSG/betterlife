@@ -7,6 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class Donation extends Model
 {
     protected $guarded = ['id'];
+    protected $fillable =
+    [
+      'user_id',
+      'dataTime_Donation',
+      'total'
+    ];
 
     public function causes()
     {

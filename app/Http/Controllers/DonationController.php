@@ -3,8 +3,15 @@
 namespace BetterLife\Http\Controllers;
 
 use BetterLife\Donation;
+use BetterLife\DetailDonation;
 use BetterLife\Cause;
 use Illuminate\Http\Request;
+use BetterLife\Http\Requests\DonationFormRequest;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Collection;
+use Illuminate\Http\Response;
+use Illuminate\Database\Eloquent\Collection;
 
 class DonationController extends Controller
 {
@@ -15,7 +22,7 @@ class DonationController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**
@@ -25,7 +32,10 @@ class DonationController extends Controller
      */
     public function create()
     {
-        //
+        $causes = DB::table('causes as caus')
+          ->select(DB::raw('caus.name','caus.id')
+          ->get();
+          return view("admin.donation.create",['causes'=>$causes]);
     }
 
     /**
