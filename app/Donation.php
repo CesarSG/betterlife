@@ -3,9 +3,11 @@
 namespace BetterLife;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\softDeletes;
 
 class Donation extends Model
 {
+    // use softDeletes;
     protected $guarded = ['id'];
     protected $fillable =
     [
@@ -17,6 +19,11 @@ class Donation extends Model
     public function causes()
     {
       return $this->belongsToMany(Cause::class);
+    }
+
+    public function users()
+    {
+      return $this->belongsT(User::class);
     }
     // scope
     // public function scopeMisDonaciones($query){

@@ -13,4 +13,5 @@ class DetailDonation extends Model
       'donation_id'
     ];
 
+    return $this->belongsTo(Cause::class);
 }

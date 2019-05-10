@@ -30,6 +30,8 @@ Route::post('/user/register', 'UserController@create')->name('create.user');
 
 Route::group(['prefix'=>'admin',  'middleware' => 'auth'], function(){
   Route::resource('causa', 'CauseController');
+  Route::resource('donacion', 'DonationController');
+  Route::post('/donacion/{id}/editar', 'DonationDetailController@store');
   // Route::get('', 'PaginasController@dashboard')->name('dashboard')->middleware('verified');
   Route::get('usuario', 'PaginasController@user')->name('user');
   Route::get('tablas', 'PaginasController@tables')->name('tables');

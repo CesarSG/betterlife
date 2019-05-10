@@ -2,16 +2,12 @@
 
 namespace BetterLife\Http\Controllers;
 
+use BetterLife\User;
 use BetterLife\Donation;
 use BetterLife\DetailDonation;
 use BetterLife\Cause;
 use Illuminate\Http\Request;
-use BetterLife\Http\Requests\DonationFormRequest;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Carbon;
-use Illuminate\Support\Collection;
-use Illuminate\Http\Response;
-use Illuminate\Database\Eloquent\Collection;
 
 class DonationController extends Controller
 {
@@ -22,7 +18,9 @@ class DonationController extends Controller
      */
     public function index()
     {
-
+      $donations = Donation::all();
+      // dd($donations );
+      return view('admin.donations.index')->with(compact('donations'));
     }
 
     /**
@@ -32,10 +30,9 @@ class DonationController extends Controller
      */
     public function create()
     {
-        $causes = DB::table('causes as caus')
-          ->select(DB::raw('caus.name','caus.id')
-          ->get();
-          return view("admin.donation.create",['causes'=>$causes]);
+        // $user = Auth::user()->id();
+        // return view('admin.donations.create')->whit(compact('user'));
+        return view('admin.donations.create');
     }
 
     /**
@@ -46,16 +43,13 @@ class DonationController extends Controller
      */
     public function store(Request $request)
     {
-
-      $cause = Cause();
       $donation = new Donation();
-      $donation->name = $request->input('name');
-      $donation->description = $request->input('description');
-      $donation->status = "Activo";
+      $donation->user_id = $request->input('user_id');
+      $donation->dataTime_donation = Carbon::now()->addDays(30)->format('Y-m-d H:i:s');
       $donation->save();
-
-      $cause->det_donations()->attach($donation->id, ['staus' => 'succes']);
-      return redirect()->route('donations.index');
+      $id = $donation->id;
+      $notification = 'El documento de donacion se ha registrado exitosamente. Ahora ingrese los productos';
+      return redirect('admin/donacion/'.$id.'/edit')->with(compact('notification'));
     }
 
     /**
@@ -64,9 +58,18 @@ class DonationController extends Controller
      * @param  \BetterLife\Donation  $donation
      * @return \Illuminate\Http\Response
      */
-    public function show(Donation $donation)
+    public function show($id)
     {
-        //
+      $causes = Cause::all();
+      $donation = Donation::find($id);
+      $donation_details = DonationDetail::where('donation_id', $donation->id)->get();
+      $total = 0;
+
+      foreach ($donation_details as $donation_detail)
+          $total = $total + $donation_detail->amount;
+
+
+      return view('admin.donations.detail')->with(compact('donation','causes','causes_details', 'total'));
     }
 
     /**
@@ -75,9 +78,12 @@ class DonationController extends Controller
      * @param  \BetterLife\Donation  $donation
      * @return \Illuminate\Http\Response
      */
-    public function edit(Donation $donation)
+    public function edit($id)
     {
-        //
+      $causes = Cause::all();
+      $donation = Donation::find($id);
+      $donation_details = SaleDetail::where('sale_id', $donation->id)->get();
+      return view('admin.donations.edit')->with(compact('donation','causes','donation_details'));
     }
 
     /**
@@ -98,8 +104,11 @@ class DonationController extends Controller
      * @param  \BetterLife\Donation  $donation
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Donation $donation)
+    public function destroy($id)
     {
-        //
+      $cause = Donation::find($id);
+      $cause->delete();
+
+      return back()->with('notification', 'La donacion se ha eliminado correctamente.');
     }
 }
