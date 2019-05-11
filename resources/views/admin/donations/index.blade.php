@@ -41,7 +41,7 @@
                 <td class="td-actions text-center">
                 <form action="{{ route('donacion.destroy', $donation->id) }}" method="POST">
                     <button type="button" rel="tooltip" class="btn btn-success btn-sm btn-icon">
-                      <a href="{{ route('causa.show', $donation->id) }}" style="color:white;" class="tim-icons icon-notes"></a>
+                      <a href="{{ route('donacion.show', $donation->id) }}" style="color:white;" class="tim-icons icon-notes"></a>
                     </button>
                       @csrf
                       @method('DELETE')

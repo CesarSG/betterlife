@@ -4,7 +4,7 @@
     <div class="col-md-12">
       <div class="card">
         <div class="card-header">
-          <h4 class="card-title">Crear Donacion</h4>
+          <h4 class="card-title">Registro de donación</h4>
         </div>
 
           <div class="card-body">
@@ -14,7 +14,8 @@
                 <div class="col-md-9">
                   <div class="form-group">
                     <label for="nombre" class="control-label">Nombre completo</label>
-                      <input  type="text" name="user_id" class="form-control" value="{{Auth::user()->id}}">
+                      <!-- <input  type="text" name="user_id" class="form-control" value="{{Auth::user()->id}}"> -->
+                      <input  type="text" name="user_id" class="form-control" value="{{Auth::user()->name}}  {{Auth::user()->last_name}}">
                     </div>
                 </div>
                 <div class="col-md-2">
@@ -33,5 +34,7 @@
               </div>
             </form>
           </div>
+            </div>
+              </div>
 
 @endsection

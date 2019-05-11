@@ -60,13 +60,13 @@
                 <div class="col-md-9">
                   <div class="form-group">
                     <label for="nombre" class="control-label">Nombre completo</label>
-                      <input  type="text" name="user_id" class="form-control" value="{{Auth::user()->id}}{{Auth::user()->name}}{{Auth::user()->last_name}}">
+                      <input  disabled type="text" name="user_id" class="form-control" value="{{Auth::user()->name}}  {{Auth::user()->last_name}}">
                     </div>
                 </div>
                 <div class="col-md-2">
                   <div class="form-group">
                     <label class="control-label">Fecha</label>
-                      <input type="text" class="form-control" placeholder="mm/dd/yyyy" id="datepicker-autoclose" name="date" value="{{ old('date', date('d / m / Y')) }}" required>
+                      <input disabled type="text" class="form-control" placeholder="mm/dd/yyyy" id="datepicker-autoclose" name="date" value="{{ old('date', date('d / m / Y')) }}" required>
                   </div>
                   </div>
                 </div>
@@ -105,30 +105,26 @@
                       @foreach($donation_details as $donation_detail )
                       <tr>
                       <td><div class="img-container "><img alt="..." src="{{route('user.avatar',['filename'=>Auth::user()->image])}}"></div></td>
-                      <td class="td-name"><a href="">{{$donation_detail->cause_id}}</a><br></td>
-                      <td class="td-name">{{$cause->description}}<br></td>
+                      <td class="td-name"><a href="">{{$donation_detail->cause->name}}</a><br></td>
+                      <td class="td-name">{{$donation_detail->cause->description}}<br></td>
                       <td class="td-number"><small>$ </small>{{$donation_detail->amount,2}}</td>
                       <td class="td-actions"><button type="button" data-placement="top" title="" class="btn-link btn btn-primary"><i class="tim-icons icon-simple-remove"></i></button></td>
                       </tr>
                       @endforeach
                       <!-- FOOTER SHOPING TABLE -->
-                      <tr><td colspan="5"></td><td class="td-total">Total</td>
-                      <td class="td-price"><small>$</small> {{ number_format($total,2)}}</td>
                       <td></td>
-                      </tr></tbody></table><button class="btn-round float-right mr-5 btn btn-info">Complete Purchase <i class="tim-icons icon-minimal-right"></i></button><div class="ps__rail-x" style="left: 0px; bottom: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div>
+                      <tr><td colspan="3"></td><td class="td-total">Total</td>
+                      <td class="td-price"><small>$</small>{{ number_format( $total,2)}}</td>
+                      <td></td>
+                      </tr>
+
+
+                    </tbody></table>
+                    <a href="/admin/donacion" class="btn btn-inverse waves-effect waves-light">Volver</a>
+                    <button type="button" class="btn-round float-right mr-5 btn btn-info animation-on-hover"> <a style="color:white;" href="/admin/donacion">Completar Donacion</a><i class="tim-icons icon-minimal-right"></i></button><div class="ps__rail-x" style="left: 0px; bottom: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div>
                       <div class="ps__rail-y" style="top: 0px; right: 0px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 0px;"></div></div>
                     </div>
                   </div>
                 </div>
                 </div>
-
-
-                <div class="col-sm-12">
-                  <div class="form-group">
-                    <a href="/admin/donacion" class="btn btn-inverse waves-effect waves-light">Volver</a>
-                    <button type="submit" class="btn btn-primary waves-effect waves-light">Guardar</button>
-                    <button class="btn btn-primary waves-effect waves-light" data-toggle="modal"  data-target="#panel-modal">Nuevo Causa</button>
-                  </div>
-                </div>
-
 @endsection

@@ -7,19 +7,19 @@ use Illuminate\Database\Eloquent\softDeletes;
 
 class Donation extends Model
 {
-    // use softDeletes;
-    protected $guarded = ['id'];
-    protected $fillable =
-    [
-      'user_id',
-      'dataTime_Donation',
-      'total'
-    ];
+    use softDeletes;
+    // protected $guarded = ['id'];
+    // protected $fillable =
+    // [
+    //   'user_id',
+    //   'dataTime_Donation',
+    //   'total'
+    // ];
 
-    public function causes()
-    {
-      return $this->belongsToMany(Cause::class);
-    }
+    // public function causes()
+    // {
+    //   return $this->belongsToMany(Cause::class);
+    // }
 
     public function users()
     {

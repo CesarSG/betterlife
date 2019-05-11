@@ -8,6 +8,7 @@ use BetterLife\DetailDonation;
 use BetterLife\Cause;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Auth;
 
 class DonationController extends Controller
 {
@@ -44,7 +45,8 @@ class DonationController extends Controller
     public function store(Request $request)
     {
       $donation = new Donation();
-      $donation->user_id = $request->input('user_id');
+      // $donation->user_id = $request->input('user_id');
+      $donation->user_id = Auth::user()->id;
       $donation->dataTime_donation = Carbon::now()->addDays(30)->format('Y-m-d H:i:s');
       $donation->save();
       $id = $donation->id;
@@ -77,7 +79,7 @@ class DonationController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {      
+    {
       $causes = Cause::all();
       $donation = Donation::find($id);
       $donation_details = DetailDonation::where('donation_id', $donation->id)->get();
@@ -93,6 +95,7 @@ class DonationController extends Controller
 
       return view('admin.donations.edit')->with(compact('donation','causes','donation_details','total'));
     }
+
 
     /**
      * Update the specified resource in storage.

@@ -32,6 +32,7 @@ Route::group(['prefix'=>'admin',  'middleware' => 'auth'], function(){
   Route::resource('causa', 'CauseController');
   Route::resource('donacion', 'DonationController');
   Route::post('/donacion/{id}/editar', 'DonationDetailController@store');
+  // Route::post('/donacion/{id}/payment', 'DonationController@payment')->name('donacion.payment');
   // Route::get('', 'PaginasController@dashboard')->name('dashboard')->middleware('verified');
   Route::get('usuario', 'PaginasController@user')->name('user');
   Route::get('tablas', 'PaginasController@tables')->name('tables');
