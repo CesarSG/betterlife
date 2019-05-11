@@ -60,13 +60,12 @@ class DonationController extends Controller
      */
     public function show($id)
     {
-      $causes = Cause::with('name')->get();
+      $causes = Cause::all();
       $donation = Donation::find($id);
       $donation_details = DetailDonation::where('donation_id', $donation->id)->get();
       $total = 0;
       foreach ($donation_details as $donation_detail)
           $total = $total + $donation_detail->amount;
-
 
       return view('admin.donations.detail')->with(compact('donation','causes','donation_details', 'total'));
     }
@@ -78,15 +77,19 @@ class DonationController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
+    {      
       $causes = Cause::all();
       $donation = Donation::find($id);
       $donation_details = DetailDonation::where('donation_id', $donation->id)->get();
-
+      // dd($donation_details);
       $total = 0;
 
       foreach ($donation_details as $donation_detail)
           $total = $total + $donation_detail->amount;
+
+          $donation_t = Donation::find($id);
+          $donation_t->Total = $total;
+          $donation_t->save();
 
       return view('admin.donations.edit')->with(compact('donation','causes','donation_details','total'));
     }

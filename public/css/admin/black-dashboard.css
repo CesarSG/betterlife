@@ -15872,6 +15872,10 @@ code {
   }
 }
 
+.image-table-item img{
+    max-width: 50%;
+    border-radius: 0.2857rem;
+}
 @media screen and (max-width: 768px) {
   .landing-page .section-story-overview .image-container:nth-child(2) {
     margin-left: 0;

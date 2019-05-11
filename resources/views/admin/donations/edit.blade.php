@@ -4,17 +4,17 @@
 <!-- Modal para agregar causas a la donacion -->
 <div id="panel-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
     <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-            <div class="panel panel-color panel-primary">
+        <div class="modal-content card">
+            <div class="panel panel-color panel-primary card-body">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Agregar Causa</h4>
+                <h4 class="modal-title card-title">Agregar Causa</h4>
               </div>
-              <div class="modal-body">
+              <div class="modal-body ">
                 <form role="form" action="/admin/donacion/{{$donation->id}}/editar" method="POST">
                     {{ csrf_field() }}
-                <div class="panel-body">
-                    <div class="form-group">
+                <div class="panel-body ">
+                    <div class="form-group ">
                         <label for="nombre" class="control-label">Cause</label>
                         <select class="form-control select2" name="cause_id">
                             <option>Seleccionar</option>
@@ -94,8 +94,9 @@
                   <table class="table-shopping table">
                     <thead>
                       <tr>
-                        <th class="text-center" width="150">IMG</th>
+                        <th class="text-center" width="100">IMG</th>
                         <th class="text-left" width="500">Causa apoyada</th>
+                          <th class="text-left" width="500">Descripción</th>
                         <th class="text-left"width="150">Monto</th>
                         <th class="text-left">opc</th>
                       </tr>
@@ -103,10 +104,11 @@
                     <tbody>
                       @foreach($donation_details as $donation_detail )
                       <tr>
-                      <td><div class="img-container"><img alt="..." src="{{route('user.avatar',['filename'=>Auth::user()->image])}}"></div></td>
-                      <td class="td-name"><a href="">{{$donation_detail->cause->name}}</a><br></td>
+                      <td><div class="img-container "><img alt="..." src="{{route('user.avatar',['filename'=>Auth::user()->image])}}"></div></td>
+                      <td class="td-name"><a href="">{{$donation_detail->cause_id}}</a><br></td>
+                      <td class="td-name">{{$cause->description}}<br></td>
                       <td class="td-number"><small>$ </small>{{$donation_detail->amount,2}}</td>
-                      <td class="td-actions"><button type="button" data-placement="top" id="tooltip237511111" title="" class="btn-link btn btn-primary"><i class="tim-icons icon-simple-remove"></i></button></td>
+                      <td class="td-actions"><button type="button" data-placement="top" title="" class="btn-link btn btn-primary"><i class="tim-icons icon-simple-remove"></i></button></td>
                       </tr>
                       @endforeach
                       <!-- FOOTER SHOPING TABLE -->
