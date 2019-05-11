@@ -23,7 +23,7 @@ class Donation extends Model
 
     public function users()
     {
-      return $this->belongsT(User::class);
+      return $this->belongsTo(User::class);
     }
     // scope
     // public function scopeMisDonaciones($query){

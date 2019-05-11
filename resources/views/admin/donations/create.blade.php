@@ -8,13 +8,13 @@
         </div>
 
           <div class="card-body">
-            <form role="form" action="" method="POST">
+            <form role="form" action="{{ route('donacion.store') }}" method="POST">
               {{ csrf_field() }}
               <div class="row">
                 <div class="col-md-9">
                   <div class="form-group">
                     <label for="nombre" class="control-label">Nombre completo</label>
-                      <input  type="text" class="form-control" value="{{Auth::user()->id}}">
+                      <input  type="text" name="user_id" class="form-control" value="{{Auth::user()->id}}">
                     </div>
                 </div>
                 <div class="col-md-2">
@@ -26,8 +26,8 @@
 
                 <div class="col-sm-12">
                   <div class="form-group">
-                    <a href="/ventas" class="btn btn-inverse waves-effect waves-light">Volver</a>
-                    <button class="btn btn-primary waves-effect waves-light">Guardar</button>
+                    <a href="/admin/donacion" class="btn btn-inverse waves-effect waves-light">Volver</a>
+                    <button type="submit" class="btn btn-primary waves-effect waves-light">Guardar</button>
                   </div>
                 </div>
               </div>

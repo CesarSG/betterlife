@@ -57,7 +57,7 @@
               @endif
               </tbody>
             </table>
-            <a href="{{ route('causa.create') }}" class="btn-round float-right mr-5 btn btn-info">Crear una nueva causa <i href="{{ route('causa.create') }}"  class="tim-icons icon-minimal-right"></i></a>
+            <a href="{{ route('donacion.create') }}" class="btn-round float-right mr-5 btn btn-info">Crear una nueva donacion <i href="{{ route('donacion.create') }}"  class="tim-icons icon-minimal-right"></i></a>
             <div class="ps__rail-x" style="left: 0px; bottom: 0px;">
               <div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>
             </div>

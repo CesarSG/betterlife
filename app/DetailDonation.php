@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class DetailDonation extends Model
 {
+    protected $table = 'det_donations';
+
     protected $guarded = ['id'];
     protected $fillable = [
       'amount',
@@ -13,5 +15,9 @@ class DetailDonation extends Model
       'donation_id'
     ];
 
-    return $this->belongsTo(Cause::class);
+    public function causes()
+    {
+      // return $this->belongsToMany(Cause::class);
+      return $this->belongsTo(Cause::class);
+    }
 }

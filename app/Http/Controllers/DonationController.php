@@ -60,16 +60,15 @@ class DonationController extends Controller
      */
     public function show($id)
     {
-      $causes = Cause::all();
+      $causes = Cause::with('name')->get();
       $donation = Donation::find($id);
-      $donation_details = DonationDetail::where('donation_id', $donation->id)->get();
+      $donation_details = DetailDonation::where('donation_id', $donation->id)->get();
       $total = 0;
-
       foreach ($donation_details as $donation_detail)
           $total = $total + $donation_detail->amount;
 
 
-      return view('admin.donations.detail')->with(compact('donation','causes','causes_details', 'total'));
+      return view('admin.donations.detail')->with(compact('donation','causes','donation_details', 'total'));
     }
 
     /**
@@ -82,8 +81,14 @@ class DonationController extends Controller
     {
       $causes = Cause::all();
       $donation = Donation::find($id);
-      $donation_details = SaleDetail::where('sale_id', $donation->id)->get();
-      return view('admin.donations.edit')->with(compact('donation','causes','donation_details'));
+      $donation_details = DetailDonation::where('donation_id', $donation->id)->get();
+
+      $total = 0;
+
+      foreach ($donation_details as $donation_detail)
+          $total = $total + $donation_detail->amount;
+
+      return view('admin.donations.edit')->with(compact('donation','causes','donation_details','total'));
     }
 
     /**
