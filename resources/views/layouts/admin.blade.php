@@ -50,7 +50,7 @@
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="{{ route('evento.index') }}">
               <i class="tim-icons icon-components"></i>
               <p>Eventos</p>
             </a>

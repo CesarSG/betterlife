@@ -50,7 +50,7 @@
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="{{ route('evento.index') }}">
               <i class="tim-icons icon-components"></i>
               <p>Eventos</p>
             </a>
@@ -59,24 +59,6 @@
             <a href="#">
               <i class="tim-icons icon-money-coins"></i>
               <p>Donaciones</p>
-            </a>
-          </li>
-          <li>
-            <a href="{{ route('notification') }}">
-              <i class="tim-icons icon-bell-55"></i>
-              <p>Notifications</p>
-            </a>
-          </li>
-          <li>
-            <a href="{{ route('user') }}">
-              <i class="tim-icons icon-single-02"></i>
-              <p>User Profile</p>
-            </a>
-          </li>
-          <li>
-            <a href="{{ route('tables') }}">
-              <i class="tim-icons icon-puzzle-10"></i>
-              <p>Table List</p>
             </a>
           </li>
         </ul>
