@@ -1,5 +1,6 @@
-@if (asset(Auth::user()->image))
-<img class="avatar" src="https://cdn.pixabay.com/photo/2017/07/18/23/23/user-2517433_960_720.png">
-<!-- else
-<img class="avatar" src="{{route('user.avatar',['filename'=>Auth::user()->image])}}"> -->
+@if(Auth::user()->image)
+<img class="avatar" src="{{route('user.avatar',['filename'=>Auth::user()->image])}}">
+@else
+<!-- <img class="avatar" src="http://chittagongit.com/images/avatar-icon-images/avatar-icon-images-4.jpg"> -->
+<img class="avatar" src="http://chittagongit.com/images/avatar-icon-images/avatar-icon-images-8.jpg">
 @endif

@@ -123,14 +123,17 @@
                       <td></td>
                       <tr><td colspan="3"></td><td class="td-total">Total</td>
                       <td class="td-price"><small>$</small>{{ number_format( $total,2)}}</td>
-                      <td></td>
                       </tr>
-
-
                     </tbody></table>
+                    <form class="" action="{{route('paypal')}}" method="post">
                     <a href="/admin/donacion" class="btn btn-inverse waves-effect waves-light">Volver</a>
-                    <button type="button" class="btn-round float-right mr-5 btn btn-info animation-on-hover"> <a style="color:white;" href="/admin/donacion">Completar Donacion</a><i class="tim-icons icon-minimal-right"></i></button><div class="ps__rail-x" style="left: 0px; bottom: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div>
-                      <div class="ps__rail-y" style="top: 0px; right: 0px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 0px;"></div></div>
+                      {{ csrf_field() }}
+                      <input type="hidden" name="amount" value="{{$total}}">
+                      <button class="btn-round float-right mr-5 btn btn-info animation-on-hover"> Completar donacion<i class="tim-icons icon-minimal-right"></i></button>
+                    </form>
+                    <div class="ps__rail-x" style="left: 0px; bottom: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div>
+                    <div class="ps__rail-y" style="top: 0px; right: 0px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 0px;"></div>
+                    </div>
                     </div>
                   </div>
                 </div>
