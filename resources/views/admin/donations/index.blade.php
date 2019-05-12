@@ -1,12 +1,24 @@
 @extends('layouts.admin-layout')
 @section('section')
-@if(session('message'))
+
+@if ($message = Session::get('success'))
 <div class="alert alert-success">
   <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
     <i class="tim-icons icon-simple-remove"></i>
   </button>
-  <span><b> Success - </b> {{session('message')}}</span>
+  <span><b> Success - </b> {{$message}}</span>
 </div>
+<?php Session::forget('success');?>
+@endif
+
+@if ($message = Session::get('error'))
+<div class="alert alert-warning">
+  <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
+    <i class="tim-icons icon-simple-remove"></i>
+  </button>
+  <span><b> Success - </b> {{$message}}</span>
+</div>
+<?php Session::forget('error');?>
 @endif
 
   <div class="col-md-12">
@@ -57,7 +69,7 @@
               @endif
               </tbody>
             </table>
-            <a href="{{ route('donacion.create') }}" class="btn-round float-right mr-5 btn btn-info">Crear una nueva donacion <i href="{{ route('donacion.create') }}"  class="tim-icons icon-minimal-right"></i></a>
+            <a href="{{ route('donacion.create') }}" class="btn-round float-right mr-5 btn btn-info">Realizar donacion <i href="{{ route('donacion.create') }}"  class="tim-icons icon-minimal-right"></i></a>
             <div class="ps__rail-x" style="left: 0px; bottom: 0px;">
               <div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>
             </div>

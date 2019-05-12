@@ -13,6 +13,11 @@
 
 Auth::routes(['verify'=>true]);
 Route::get('/home', 'HomeController@index')->name('home');
+// route for processing payment
+Route::post('paypal', 'PaymentController@payWithpaypal')->name('paypal');
+
+// route for check status of the payment
+Route::get('status', 'PaymentController@getPaymentStatus');
 
 Route::get('/', 'PaginasController@index')->name('index');
 Route::get('/nosotros', 'PaginasController@about')->name('about');
