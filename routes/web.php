@@ -29,7 +29,7 @@ Route::post('/user/register', 'UserController@create')->name('create.user');
 
 
 Route::group(['prefix'=>'admin',  'middleware' => 'auth'], function(){
-  Route::resource('causa', 'CauseController');
+  Route::resource('causa', 'CauseController')->middleware('role');
   Route::resource('donacion', 'DonationController');
   Route::post('/donacion/{id}/editar', 'DonationDetailController@store');
   // Route::post('/donacion/{id}/payment', 'DonationController@payment')->name('donacion.payment');

@@ -93,7 +93,8 @@ class DonationController extends Controller
           $donation_t->Total = $total;
           $donation_t->save();
 
-      return view('admin.donations.edit')->with(compact('donation','causes','donation_details','total'));
+      $notification = 'Causa agregada';
+      return view('admin.donations.edit')->with(compact('donation','causes','donation_details','total','notification'));
     }
 
 

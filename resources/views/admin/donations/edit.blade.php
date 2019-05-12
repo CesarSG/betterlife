@@ -1,6 +1,7 @@
 @extends('layouts.admin-layout')
 
 @section('section')
+
 <!-- Modal para agregar causas a la donacion -->
 <div id="panel-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
     <div class="modal-dialog modal-sm">
@@ -46,7 +47,14 @@
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
-
+@if(session('notification'))
+<div class="alert alert-success">
+  <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
+    <i class="tim-icons icon-simple-remove"></i>
+  </button>
+  <span><b> Success - </b> {{session('notification')}}</span>
+</div>
+@endif
 
     <!--Form Content Donacion  -->
     <div class="col-md-12">

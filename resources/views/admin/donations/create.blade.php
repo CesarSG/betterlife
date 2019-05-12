@@ -1,6 +1,13 @@
 @extends('layouts.admin-layout')
 
 @section('section')
+<div class="alert alert-info">
+                  <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
+                    <i class="tim-icons icon-simple-remove"></i>
+                  </button>
+                  <span>
+                    <b> Info - </b>Verifique que sus datos sean correctos </span>
+                </div>
     <div class="col-md-12">
       <div class="card">
         <div class="card-header">
@@ -27,8 +34,8 @@
 
                 <div class="col-sm-12">
                   <div class="form-group">
-                    <a href="/admin/donacion" class="btn btn-inverse waves-effect waves-light">Volver</a>
-                    <button type="submit" class="btn btn-primary waves-effect waves-light">Guardar</button>
+                    <!-- <a href="/admin/donacion" class="btn btn-inverse waves-effect waves-light">Volver</a> -->
+                    <button type="submit" class="btn btn-primary waves-effect waves-light">Continuar</button>
                   </div>
                 </div>
               </div>
