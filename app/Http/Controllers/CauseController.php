@@ -121,4 +121,8 @@ class CauseController extends Controller
         return redirect()->route('causa.index')
                         ->with(['message'=>'Registro eliminado correctamente']);
     }
+    // public function destroy($id){
+    //   $cause = Cause::findOrFail($id);
+    //   dd($cause);
+    // }
 }
