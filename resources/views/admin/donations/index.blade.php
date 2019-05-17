@@ -45,6 +45,7 @@
             <tbody>
               @if(isset($donations))
               @foreach ($donations as $donation)
+              
               <tr>
                 <td class="text-center">{{ $donation->id}}</td>
                 <td class="text-center">{{$donation->dataTime_donation}}</td>
