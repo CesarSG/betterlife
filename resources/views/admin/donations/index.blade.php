@@ -44,7 +44,8 @@
             </thead>
             <tbody>
               @if(isset($donations))
-              @foreach ($donations as $donation)
+                @foreach ($donations as $donation)
+                  @if($donation->user_id==Auth::user()->id)
               <tr>
                 <td class="text-center">{{ $donation->id}}</td>
                 <td class="text-center">{{$donation->dataTime_donation}}</td>
@@ -63,6 +64,7 @@
                 </form>
               </td>
               </tr>
+              @endif
               @endforeach
               @else
               <p>tabla vacia</p>
