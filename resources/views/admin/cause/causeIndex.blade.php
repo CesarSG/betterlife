@@ -40,12 +40,13 @@
                 <td class="text-center"><div class="photo"><img alt="..." src="../images/2.jpg"></div></td>
                 <td>{{ $cause->name}}</td>
                 <td>Activo</td>
-                <td>${{ $cause->goal}}</td>
+                <td id="meta" >${{ $cause->goal}}</td>
                 <td>
                   <div class="progress-container">
-                    <span class="progress-badge">$ {{ $cause->current_money}}</span>
+                    <span class="progress-badge" id="current_money">$ {{ $cause->current_money}}</span>
+
                     <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 1%;">
+                      <div class="progress-bar" role="progressbar" style="width: 5%;">
                       </div>
                     </div>
                   </div>
@@ -81,4 +82,14 @@
         </div>
       </div>
     </div>
+
+    <script>
+        function Sumar() {
+            var n1 = document.getElementById('meta').value;
+            var n2 = document.getElementById('current_money').value;
+            var divicion = parseInt(n1) / parseInt(n2);
+            var resultado = divicion*100;
+            return (resultado);
+        }
+    </script>
 @endsection

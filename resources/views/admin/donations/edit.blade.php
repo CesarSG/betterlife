@@ -17,7 +17,7 @@
                 <div class="panel-body ">
                     <div class="form-group ">
                         <label for="nombre" class="control-label">Cause</label>
-                        <select class="form-control select2" name="cause_id">
+                        <select class="form-control select2 " data-live-search="true"  name="cause_id">
                             <option>Seleccionar</option>
                             @foreach($causes as $cause)
                             <option value="{{ $cause->id }}">{{ $cause->name }} </option>
@@ -102,8 +102,8 @@
                   <table class="table-shopping table">
                     <thead>
                       <tr>
-                        <th class="text-center" width="100">IMG</th>
-                        <th class="text-left" width="500">Causa apoyada</th>
+                        <th class="text-center" width="70">IMG</th>
+                        <th class="text-center" width="500">Causa apoyada</th>
                           <th class="text-left" width="500">Descripción</th>
                         <th class="text-left"width="150">Monto</th>
                         <th class="text-left">opc</th>
@@ -113,7 +113,7 @@
                       @foreach($donation_details as $donation_detail )
                       <tr>
                       <td><div class="img-container "><img alt="..." src="{{route('user.avatar',['filename'=>Auth::user()->image])}}"></div></td>
-                      <td class="td-name"><a href="">{{$donation_detail->cause->name}}</a><br></td>
+                      <td class="td-name text-center"><a href="">{{$donation_detail->cause->name}}</a><br></td>
                       <td class="td-name">{{$donation_detail->cause->description}}<br></td>
                       <td class="td-number"><small>$ </small>{{$donation_detail->amount,2}}</td>
                       <td class="td-actions"><button type="button" data-placement="top" title="" class="btn-link btn btn-primary"><i class="tim-icons icon-simple-remove"></i></button></td>
