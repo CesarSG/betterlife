@@ -30,6 +30,7 @@ Route::post('/user/register', 'UserController@create')->name('create.user');
 Route::group(['prefix'=>'admin'], function(){
   Route::resource('causa', 'CauseController');
   Route::resource('evento', 'EventController');
+  Route::get('evento/{evento}/info', 'EventController@info')->name('evento.info');
   // Route::get('', 'PaginasController@dashboard')->name('dashboard')->middleware('verified');
   Route::get('usuario', 'PaginasController@user')->name('user');
   Route::get('tablas', 'PaginasController@tables')->name('tables');
