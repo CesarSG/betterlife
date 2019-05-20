@@ -11,7 +11,7 @@
   <div class="col-md-12">
     <div class="card">
       <div class="card-header">
-        <h4 class="card-title">Causas</h4>
+        <h4 class="card-title">Eventos</h4>
       </div>
       <div class="card-body">
         <div class="table-responsive ps">
@@ -20,11 +20,11 @@
               <tr>
                 <th class="text-center">#</th>
                 <th class="text-center">Imagen</th>
-                <th>Nombre Causa</th>
-                <th>Estatus</th>
-                <th>Meta</th>
-                <th class="text-center">Cantidad Actual</th>
-                <th class="text-center">Accion</th>
+                <th>Nombre Evento</th>
+                <th>Fecha Inicio</th>
+                <th>Fecha Final</th>
+                <th class="text-center">Ubicacion</th>
+                <th class="text-center">Info</th>
               </tr>
             </thead>
             <tbody>
@@ -33,34 +33,22 @@
                 <td class="text-center">{{ $event->id}}</td>
                 <td class="text-center"><div class="photo"><img alt="..." src="../images/2.jpg"></div></td>
                 <td>{{ $event->name}}</td>
-                <td>Activo</td>
-                <td>${{ $event->goal}}</td>
-                <td>
-                  <div class="progress-container">
-                    <span class="progress-badge">$ {{ $cause->current_money}}</span>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 1%;">
-                      </div>
-                    </div>
-                  </div>
-                </td>
+                <td>{{ $event->date_begin}}</td>
+                <td>{{ $event->date_final}}</td>
+                <td class="text-center">{{ $event->location}}</td>
                 <td class="td-actions text-center">
-                <form action="{{ route('causa.destroy', $cause->id) }}" method="POST">
-                    <button type="button" rel="tooltip" class="btn btn-success btn-sm btn-icon">
-                      <a href="{{ route('causa.edit', $cause->id) }}" style="color:white;" class="tim-icons icon-settings"></a>
-                    </button>
-                      @csrf
-                      @method('DELETE')
-                    <button type="submit" rel="tooltip" class="btn btn-danger btn-sm btn-icon">
-                      <a style="color:white;" class="tim-icons icon-simple-remove"></a>
-                    </button>
-                </form>
+                <button type="button" rel="tooltip" class="btn btn-primary btn-sm btn-icon">
+                      <a href="{{ route('evento.info', $event->id) }}" style="color:white;" class="tim-icons icon-alert-circle-exc"></a>
+                </button>
+                <button type="button" rel="tooltip" class="btn btn-success btn-sm btn-icon">
+                      <a href="{{ route('evento.edit', $event->id) }}" style="color:white;" class="tim-icons icon-settings"></a>
+                </button>
               </td>
               </tr>
               @endforeach
               </tbody>
             </table>
-            <a href="{{ route('evento.create') }}" class="btn-round float-right mr-5 btn btn-info">Crear un nuevo evento<i href="{{ route('causa.create') }}"  class="tim-icons icon-minimal-right"></i></a>
+            <a href="{{ route('evento.create') }}" class="btn-round float-right mr-5 btn btn-info">Crear un nuevo evento<i href="{{ route('evento.create') }}"  class="tim-icons icon-minimal-right"></i></a>
             <div class="ps__rail-x" style="left: 0px; bottom: 0px;">
               <div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>
             </div>
