@@ -55,6 +55,7 @@
                       </div>
                     </div>
                   </div>
+                    <input type="hidden" name="current_money" value="{{ isset($cause) ? $cause->current_money : '' }}{{ old('current_money  ') }}">
                     <div class="card-footer">
                       <button type="submit" value="Submit" class="btn btn-fill btn-primary">Guardar</button>
                     </div>
