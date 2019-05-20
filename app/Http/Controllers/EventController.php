@@ -2,11 +2,25 @@
 
 namespace BetterLife\Http\Controllers;
 
+use BetterLife\Cause;
+
 use BetterLife\Event;
 use Illuminate\Http\Request;
 
 class EventController extends Controller
 {
+
+    public function info($id)
+    {
+        $causes = Cause::all();
+        foreach ($causes as $cause) {
+            $pct = ($cause->current_money * 100)/$cause->goal;
+            $cause->pct = $pct;
+        }
+        $event = Event::findOrFail($id);
+        return view('admin.event.eventInfo', compact('event'));
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,8 +28,9 @@ class EventController extends Controller
      */
     public function index()
     {
-      $events = Event::all();
-      return view('admin.event.eventIndex', compact('events'));
+        $causes = Cause::all();
+        $events = Event::all();
+        return view('admin.event.eventIndex', compact('events', 'causes'));
     }
 
     /**
@@ -25,7 +40,8 @@ class EventController extends Controller
      */
     public function create()
     {
-        return view('admin.event.eventForm');
+        $causes = Cause::all();
+        return view('admin.event.eventForm', compact('causes'));
     }
 
     /**
@@ -36,7 +52,19 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $event = Event::create($request->except('cause_id'));
+        $event->causes()->attach($request->cause_id);
+        /*dd($request->all());
+        $event = new Event();
+        $event->name = $request->input('name');
+        $event->date_begin = $request->input('date_begin');
+        $event->date_final = $request->input('date_final');
+        $event->location = $request->input('location');
+        $event->description = $request->input('description');
+        $event->save();*/
+
+        return redirect()->route('evento.index')
+                            ->with(['message'=>'Evento registrado correctamente']);
     }
 
     /**
@@ -56,9 +84,11 @@ class EventController extends Controller
      * @param  \BetterLife\Event  $event
      * @return \Illuminate\Http\Response
      */
-    public function edit(Event $event)
+    public function edit($id)
     {
-        //
+        $causes = Cause::all();
+        $event = Event::findOrFail($id);
+        return view('admin.event.eventForm', compact('event', 'causes'));
     }
 
     /**
