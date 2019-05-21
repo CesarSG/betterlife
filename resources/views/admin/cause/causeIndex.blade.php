@@ -8,12 +8,17 @@
   <span><b> Success - </b> {{session('message')}}</span>
 </div>
 @endif
+
   <div class="col-md-12">
     <div class="card">
       <div class="card-header">
         <h4 class="card-title">Causas</h4>
       </div>
       <div class="card-body">
+
+        <form class="" action="index.html" method="post">
+          <label for="filtro_nombre"></label>
+        </form>
         <div class="table-responsive ps">
           <table class="table tablesorter">
             <thead class="text-primary">
@@ -28,16 +33,18 @@
               </tr>
             </thead>
             <tbody>
+              @if(isset($causes))
               @foreach ($causes as $cause)
               <tr>
                 <td class="text-center">{{ $cause->id}}</td>
                 <td class="text-center"><div class="photo"><img alt="..." src="../images/2.jpg"></div></td>
                 <td>{{ $cause->name}}</td>
                 <td>Activo</td>
-                <td>${{ $cause->goal}}</td>
+                <td id="meta" >${{ $cause->goal}}</td>
                 <td>
                   <div class="progress-container">
-                    <span class="progress-badge">$ {{ $cause->current_money}}</span>
+                    <span class="progress-badge" id="current_money">$ {{ $cause->current_money}}</span>
+
                     <div class="progress">
                       <div class="progress-bar" role="progressbar" style="width: {{$cause->pct}}%;">
                       </div>
@@ -58,8 +65,12 @@
               </td>
               </tr>
               @endforeach
+              @else
+              <p>tabla vacia</p>
+              @endif
               </tbody>
             </table>
+            {{$causes->links()}}
             <a href="{{ route('causa.create') }}" class="btn-round float-right mr-5 btn btn-info">Crear una nueva causa <i href="{{ route('causa.create') }}"  class="tim-icons icon-minimal-right"></i></a>
             <div class="ps__rail-x" style="left: 0px; bottom: 0px;">
               <div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>
@@ -71,4 +82,14 @@
         </div>
       </div>
     </div>
+
+    <script>
+        function Sumar() {
+            var n1 = document.getElementById('meta').value;
+            var n2 = document.getElementById('current_money').value;
+            var divicion = parseInt(n1) / parseInt(n2);
+            var resultado = divicion*100;
+            return (resultado);
+        }
+    </script>
 @endsection
