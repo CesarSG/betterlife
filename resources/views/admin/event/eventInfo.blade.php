@@ -28,8 +28,8 @@
                   <p class="plan">{{$cause->description}}</p>
                   <br>
                   <div class="progress-container">
-                    <h4>${{$cause->goal}}</h4>
-                    <span class="progress-badge">$ {{ $cause->current_money}}</span>
+                    <h4>${{$cause->goal}} Meta </h4>
+                    <span class="progress-badge">$ {{ $cause->current_money}} - Dinero actual</span>
                     <div class="progress">
                       <div class="progress-bar" role="progressbar" style="width: {{$cause->pct}}%;">
                       </div>
