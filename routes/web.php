@@ -32,9 +32,10 @@ Route::get('/user/avatar/{filename}', 'UserController@getImage')->name('user.ava
 Route::get('/registro', 'UserController@register')->name('register.user')->middleware('auth', 'role');
 Route::post('/user/register', 'UserController@create')->name('create.user');
 
-
-Route::group(['prefix'=>'admin',  'middleware' => 'auth'], function(){
+Route::group(['prefix'=>'admin', 'middleware' => 'auth'], function(){
   Route::resource('causa', 'CauseController')->middleware('role');
+  Route::resource('evento', 'EventController');
+  Route::get('evento/{evento}/info', 'EventController@info')->name('evento.info');
   Route::resource('donacion', 'DonationController');
   Route::post('/donacion/{id}/editar', 'DonationDetailController@store');
   // Route::post('/donacion/{id}/payment', 'DonationController@payment')->name('donacion.payment');
@@ -43,6 +44,5 @@ Route::group(['prefix'=>'admin',  'middleware' => 'auth'], function(){
   Route::get('tablas', 'PaginasController@tables')->name('tables');
   Route::get('team', 'PaginasController@team')->name('team');
   Route::get('notificacion', 'PaginasController@notification')->name('notification');
-  Route::get('evento', 'PaginasController@event')->name('event');
   Route::get('paneles', 'PaginasController@panels')->name('panels');
 });

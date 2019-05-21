@@ -11,9 +11,10 @@ class Cause extends Model
     use SoftDeletes;
 
     protected $guarded = ['id'];
-    // Protected $fillable = [
-    //     'name','description','goal', 'status', 'current_money'
-    // ];
+    public function events()
+    {
+        return $this->belongsToMany(Event::class);
+    }
 
     public function donations()
     {

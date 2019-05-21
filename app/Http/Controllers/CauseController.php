@@ -15,9 +15,11 @@ class CauseController extends Controller
      */
     public function index()
     {
-      // $causes = Cause::all();
-
       $causes = Cause::paginate(5);
+      foreach ($causes as $cause) {
+        $pct = ($cause->current_money * 100)/$cause->goal;
+        $cause->pct = $pct;
+      }
       return view('admin.cause.causeIndex', compact('causes'));
     }
 
@@ -101,7 +103,7 @@ class CauseController extends Controller
       $cause->description = $request->input('description');
       $cause->goal = $request->input('goal');
       $cause->status = true;
-      $cause->current_money = 0;
+      $cause->current_money = $request->input('current_money');
       $cause->update();
       return redirect()->route('causa.index')
                         ->with(['message'=>'Informacion actualizada correctamente']);
