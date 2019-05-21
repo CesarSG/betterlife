@@ -46,30 +46,35 @@
               @if(isset($donations))
                 @foreach ($donations as $donation)
                   @if($donation->user_id==Auth::user()->id)
-              <tr>
-                <td class="text-center">{{ $donation->id}}</td>
-                <td class="text-center">{{$donation->dataTime_donation}}</td>
-                <td>$ {{$donation->Total}}</td>
-                <td>Aprovada</td>
-                <td class="td-actions text-center">
-                <form action="{{ route('donacion.destroy', $donation->id) }}" method="POST">
-                    <button type="button" rel="tooltip" class="btn btn-success btn-sm btn-icon">
-                      <a href="{{ route('donacion.show', $donation->id) }}" style="color:white;" class="tim-icons icon-notes"></a>
-                    </button>
-                      @csrf
-                      @method('DELETE')
-                    <button type="submit" rel="tooltip" class="btn btn-danger btn-sm btn-icon">
-                      <a style="color:white;" class="tim-icons icon-simple-remove"></a>
-                    </button>
-                </form>
-              </td>
-              </tr>
-              @endif
-              @endforeach
-              @else
-              <p>tabla vacia</p>
-              @endif
-              </tbody>
+                  <tr>
+                    <td class="text-center">{{ $donation->id}}</td>
+                    <td class="text-center">{{$donation->dataTime_donation}}</td>
+                    <td>$ {{$donation->Total}}</td>
+                    <td>Aprovada</td>
+                    <td class="td-actions text-center">
+                    <form action="{{ route('donacion.destroy', $donation->id) }}" method="POST">
+                        <button type="button" rel="tooltip" class="btn btn-success btn-sm btn-icon">
+                          <a href="{{ route('donacion.show', $donation->id) }}" style="color:white;" class="tim-icons icon-notes"></a>
+                        </button>
+                          @csrf
+                          @method('DELETE')
+                        <button type="submit" rel="tooltip" class="btn btn-danger btn-sm btn-icon">
+                          <a style="color:white;" class="tim-icons icon-simple-remove"></a>
+                        </button>
+                    </form>
+                  </td>
+                  </tr>
+                  @endif
+                @endforeach
+            </tbody>
+            @else
+            <div class="alert alert-warning">
+              <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
+                <i class="tim-icons icon-simple-remove"></i>
+              </button>
+              <span><b> Aviso - </b>Listas vacia</span>
+              </div>
+            @endif
             </table>
             <a href="{{ route('donacion.create') }}" class="btn-round float-right mr-5 btn btn-info">Realizar donacion <i href="{{ route('donacion.create') }}"  class="tim-icons icon-minimal-right"></i></a>
             <div class="ps__rail-x" style="left: 0px; bottom: 0px;">

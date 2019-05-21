@@ -19,12 +19,6 @@ class DonationController extends Controller
      */
     public function index()
     {
-      // $donations = User::with(['donation' => function ($query) {
-      //   $query->where('id','=', Auth::user()->id );
-      //   // 'account_id', 1
-      //
-      //   }])->get();
-        // dd($donations );
       $donations = Donation::all();
       // dd($donations );
       return view('admin.donations.index')->with(compact('donations'));
@@ -37,8 +31,10 @@ class DonationController extends Controller
      */
     public function create()
     {
-        // $user = Auth::user()->id();
-        // return view('admin.donations.create')->whit(compact('user'));
+      //implementacion de policy
+      if(\Auth::user()->cannot('create')){          
+          return redirect()->back();
+      }
         return view('admin.donations.create');
     }
 

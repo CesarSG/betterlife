@@ -116,7 +116,9 @@
                       <td class="td-name text-center"><a href="">{{$donation_detail->cause->name}}</a><br></td>
                       <td class="td-name">{{$donation_detail->cause->description}}<br></td>
                       <td class="td-number"><small>$ </small>{{$donation_detail->amount,2}}</td>
-                      <td class="td-actions"><button type="button" data-placement="top" title="" class="btn-link btn btn-primary"><i class="tim-icons icon-simple-remove"></i></button></td>
+                      <td class="td-actions">  <!--  -->
+                        <button type="button" data-placement="top" title="" class="btn-link btn btn-primary"><i class="tim-icons icon-simple-remove"></i></button>
+                        </td>
                       </tr>
                       @endforeach
                       <!-- FOOTER SHOPING TABLE -->
