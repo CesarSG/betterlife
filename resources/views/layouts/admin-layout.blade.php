@@ -27,13 +27,46 @@
       <!--
         Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red"
     -->
-      <div class="sidebar-wrapper">
-        <div class="logo">
-          <a href="javascript:void(0)" class="simple-text logo-mini">
+    <div class="sidebar-wrapper">
+      <div class="logo">
+        <a href="javascript:void(0)" class="simple-text logo-mini">
 
+        </a>
+        <a href="javascript:void(0)" class="simple-text logo-normal">
+          Creative Tim
+        </a>
+      </div>
+      <ul class="nav">
+        <li class="active ">
+          <a href="{{ route('home') }}">
+            <i class="tim-icons icon-chart-pie-36"></i>
+            <p>Inicio</p>
           </a>
-          <a href="javascript:void(0)" class="simple-text logo-normal">
-            Creative Tim
+        </li>
+        <!-- <li>
+          <a href="#">
+            <i class="tim-icons icon-components"></i>
+            <p>Eventos</p>
+          </a>
+        </li> -->
+        <li>
+          <a href="{{route('donacion.index')}}">
+            <i class="tim-icons icon-money-coins"></i>
+            <p>Donaciones</p>
+          </a>
+        </li>
+
+        @can('acces-admin')
+        <!-- <li>
+          <a href="{{ route('user') }}">
+            <i class="tim-icons icon-single-02"></i>
+            <p>User Profile</p>
+          </a>
+        </li> -->
+        <li>
+          <a href="{{ route('register.user') }}">
+            <i class="tim-icons icon-single-02"></i>
+            <p>Crear Usuario</p>
           </a>
         </div>
         <ul class="nav">
@@ -64,6 +97,7 @@
         </ul>
       </div>
     </div>
+  </div>
     <div class="main-panel">
       <!-- Navbar -->
       <nav class="navbar navbar-expand-lg navbar-absolute navbar-transparent">

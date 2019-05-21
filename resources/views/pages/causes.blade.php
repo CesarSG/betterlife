@@ -170,7 +170,6 @@
                       </div><!-- .cause-content-wrap -->
                   </div><!-- .cause-wrap -->
               </div><!-- .col -->
-
               <div class="col-12 col-md-6 col-lg-4">
                   <div class="cause-wrap">
                       <figure class="m-0">
@@ -212,7 +211,6 @@
                       </div><!-- .cause-content-wrap -->
                   </div><!-- .cause-wrap -->
               </div><!-- .col -->
-
               <div class="col-12 col-md-6 col-lg-4">
                   <div class="cause-wrap">
                       <figure class="m-0">

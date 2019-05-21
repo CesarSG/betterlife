@@ -80,6 +80,17 @@ class UserController extends Controller
       'email' => ['required', 'string', 'email', 'max:255', 'unique:users,email,' . $id],
     ]);
 
+
+    //subir imagen de Usuario
+    if($request->hasFile('image_path')){
+      $user = User::findOrFail($id);
+
+      if($user->image){
+        Storage::delete('public/'.$user->image);
+      }
+      $user->image=$request->file('image_path')->store('uploads','public');
+    }
+    
     //datos del formulario
     $name = $request -> input('name');
     $last_name = $request -> input('last_name');
@@ -92,15 +103,6 @@ class UserController extends Controller
     $user->username = $username;
     $user->email = $email;
 
-    //subir imagen de Usuario
-    $image_path = $request->file('image_path');
-    if($image_path){
-
-      $image_path_name = time().$image_path->getClientOriginalName();
-
-      Storage::disk('users')->put($image_path_name, File::get($image_path));
-      $user->image = $image_path_name;
-    }
 
     //ejecucion de consulta a la DB
     $user->update();
@@ -108,9 +110,9 @@ class UserController extends Controller
                       ->with(['message'=>'Informacion actualizada correctamente']);
   }
 
-  public function getImage($filename){
-    $file = Storage::disk('users')->get($filename);
-    return new Response($file, 200);
-  }
+  // public function getImage($filename){
+  //   $file = Storage::disk('users')->get($filename);
+  //   return new Response($file, 200);
+  // }
 
 }

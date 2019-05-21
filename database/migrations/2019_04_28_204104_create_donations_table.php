@@ -18,7 +18,7 @@ class CreateDonationsTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
             $table->dateTime('dataTime_donation');
-            $table->float('Total');
+            $table->float('Total')->nullable();
             $table->timestamps();
         });
     }
