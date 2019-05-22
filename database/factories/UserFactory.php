@@ -15,7 +15,6 @@ use Faker\Generator as Faker;
 */
 
 $factory->define(BetterLife\User::class, function (Faker $faker) {
-      $word = $faker->sentence(1);
       $lastName = $this->faker->lastName();
       $username = $this->faker->username();
     return [

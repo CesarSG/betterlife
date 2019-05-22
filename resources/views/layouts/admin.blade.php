@@ -43,18 +43,7 @@
               <p>Inicio</p>
             </a>
           </li>
-          <li>
-            <a href="{{ route('causa.index') }}">
-              <i class="tim-icons icon-heart-2"></i>
-              <p>Causas</p>
-            </a>
-          </li>
-          <li>
-            <a href="{{ route('evento.index') }}">
-              <i class="tim-icons icon-components"></i>
-              <p>Eventos</p>
-            </a>
-          </li> -->
+
           <li>
             <a href="{{route('donacion.index')}}">
               <i class="tim-icons icon-money-coins"></i>
@@ -63,36 +52,26 @@
           </li>
 
           @can('acces-admin')
-          <!-- <li>
-            <a href="{{ route('user') }}">
-              <i class="tim-icons icon-single-02"></i>
-              <p>User Profile</p>
-            </a>
-          </li> -->
+
           <li>
             <a href="{{ route('register.user') }}">
               <i class="tim-icons icon-single-02"></i>
               <p>Crear Usuario</p>
             </a>
           </li>
-          <li>
-            <a href="{{ route('causa.index') }}">
-              <i class="tim-icons icon-heart-2"></i>
-              <p>Causas</p>
-            </a>
-          </li>
-          <!-- <li>
-            <a href="{{ route('notification') }}">
-            <i class="tim-icons icon-bell-55"></i>
-            <p>Notifications</p>
-          </a>
-          </li>
-          <li>
-            <a href="{{ route('tables') }}">
-              <i class="tim-icons icon-puzzle-10"></i>
-              <p>Table List</p>
-            </a>
-          </li> -->
+    
+                    <li>
+                      <a href="{{ route('causa.index') }}">
+                        <i class="tim-icons icon-heart-2"></i>
+                        <p>Causas</p>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="{{ route('evento.index') }}">
+                        <i class="tim-icons icon-components"></i>
+                        <p>Eventos</p>
+                      </a>
+                    </li>
           @endcan
 
         </ul>

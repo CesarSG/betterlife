@@ -11,13 +11,17 @@ class Cause extends Model
     use SoftDeletes;
 
     protected $guarded = ['id'];
-    public function events()
-    {
-        return $this->belongsToMany(Event::class);
-    }
+    // Protected $fillable = [
+    //     'name','description','goal', 'status', 'current_money'
+    // ];
 
     public function donations()
     {
       return $this->belongsToMany(Donation::class);
+    }
+
+    public function events()
+    {
+        return $this->belongsToMany(Event::class);
     }
 }

@@ -15,11 +15,12 @@ class CauseController extends Controller
      */
     public function index()
     {
-      $causes = Cause::paginate(5);
+      $causes = Cause::all();
       foreach ($causes as $cause) {
         $pct = ($cause->current_money * 100)/$cause->goal;
         $cause->pct = $pct;
       }
+        $causes = Cause::paginate(5);
       return view('admin.cause.causeIndex', compact('causes'));
     }
 

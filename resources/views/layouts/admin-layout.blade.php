@@ -43,12 +43,7 @@
             <p>Inicio</p>
           </a>
         </li>
-        <!-- <li>
-          <a href="#">
-            <i class="tim-icons icon-components"></i>
-            <p>Eventos</p>
-          </a>
-        </li> -->
+
         <li>
           <a href="{{route('donacion.index')}}">
             <i class="tim-icons icon-money-coins"></i>
@@ -57,45 +52,30 @@
         </li>
 
         @can('acces-admin')
-        <!-- <li>
-          <a href="{{ route('user') }}">
-            <i class="tim-icons icon-single-02"></i>
-            <p>User Profile</p>
-          </a>
-        </li> -->
+
         <li>
           <a href="{{ route('register.user') }}">
             <i class="tim-icons icon-single-02"></i>
             <p>Crear Usuario</p>
           </a>
-        </div>
-        <ul class="nav">
-          <li>
-            <a href="{{ route('home') }}">
-              <i class="tim-icons icon-chart-pie-36"></i>
-              <p>Inicio</p>
-            </a>
-          </li>
-          <li>
-            <a href="{{ route('causa.index') }}">
-              <i class="tim-icons icon-heart-2"></i>
-              <p>Causas</p>
-            </a>
-          </li>
-          <li>
-            <a href="{{ route('evento.index') }}">
-              <i class="tim-icons icon-components"></i>
-              <p>Eventos</p>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="tim-icons icon-money-coins"></i>
-              <p>Donaciones</p>
-            </a>
-          </li>
-        </ul>
-      </div>
+        </li>
+        <li>
+          <a href="{{ route('causa.index') }}">
+            <i class="tim-icons icon-heart-2"></i>
+            <p>Causas</p>
+          </a>
+        </li>
+
+        <li>
+          <a href="{{ route('evento.index') }}">
+            <i class="tim-icons icon-components"></i>
+            <p>Eventos</p>
+          </a>
+        </li>
+
+        @endcan
+
+      </ul>
     </div>
   </div>
     <div class="main-panel">
