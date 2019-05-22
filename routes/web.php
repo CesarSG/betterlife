@@ -37,6 +37,8 @@ Route::group(['prefix'=>'admin',  'middleware' => 'auth'], function(){
   Route::resource('causa', 'CauseController')->middleware('role');
   Route::resource('donacion', 'DonationController');
   Route::post('/donacion/{id}/editar', 'DonationDetailController@store');
+  Route::resource('evento', 'EventController');
+  Route::get('evento/{evento}/info', 'EventController@info')->name('evento.info');
   // Route::get('/donacion/{id}', 'DonationDetailController@destroy')->name('detail.destroy');
   // Route::post('/donacion/{id}/payment', 'DonationController@payment')->name('donacion.payment');
   // Route::get('', 'PaginasController@dashboard')->name('dashboard')->middleware('verified');
@@ -44,6 +46,5 @@ Route::group(['prefix'=>'admin',  'middleware' => 'auth'], function(){
   Route::get('tablas', 'PaginasController@tables')->name('tables');
   Route::get('team', 'PaginasController@team')->name('team');
   Route::get('notificacion', 'PaginasController@notification')->name('notification');
-  Route::get('evento', 'PaginasController@event')->name('event');
   Route::get('paneles', 'PaginasController@panels')->name('panels');
 });

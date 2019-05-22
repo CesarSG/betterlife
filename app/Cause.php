@@ -19,4 +19,9 @@ class Cause extends Model
     {
       return $this->belongsToMany(Donation::class);
     }
+
+    public function events()
+    {
+        return $this->belongsToMany(Event::class);
+    }
 }

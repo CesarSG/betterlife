@@ -46,7 +46,7 @@
                     <span class="progress-badge" id="current_money">$ {{ $cause->current_money}}</span>
 
                     <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 5%;">
+                      <div class="progress-bar" role="progressbar" style="width: {{$cause->pct}}%;">
                       </div>
                     </div>
                   </div>
