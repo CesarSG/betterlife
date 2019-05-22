@@ -65,7 +65,14 @@
               <p>Causas</p>
             </a>
           </li>
-        
+
+
+                  <li>
+                    <a href="{{ route('evento.index') }}">
+                      <i class="tim-icons icon-components"></i>
+                      <p>Eventos</p>
+                    </a>
+                    </li>
           @endcan
 
         </ul>
