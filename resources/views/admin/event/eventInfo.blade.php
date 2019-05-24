@@ -11,7 +11,7 @@
             <p>{{$event->description}}</p>
             <br>
           </div>
-          
+
         </div>
         <div class="text-left">
           <h3>Causas involucradas en el evento</h3>
@@ -22,7 +22,7 @@
             <div class="card-pricing card-primary card">
               <div class="card-body">
                 <h3 class="card-title">{{$cause->name}}</h3>
-                <img alt="..." src="../../../images/3.jpg" class="card-img">
+                <img class="card-img" src="{{asset('storage').'/'.$cause->images->image_patch}}" alt="">
                 <div class="card-prices">
                   <br>
                   <p class="plan">{{$cause->description}}</p>

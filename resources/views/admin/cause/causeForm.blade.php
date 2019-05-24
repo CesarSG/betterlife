@@ -25,10 +25,10 @@
               @endif
               <div class="card-body">
                 @if (@isset($cause))
-                <form action="{{ route('causa.update', $cause->id) }}" method="POST">
+                <form action="{{ route('causa.update', $cause->id) }}" method="POST" enctype="multipart/form-data">
                   <input type="hidden" name="_method" value="PATCH">
                 @else
-                <form action="{{ route('causa.store') }}" method="POST" class="form-horizontal">
+                <form action="{{ route('causa.store') }}" method="POST" class="form-horizontal" enctype="multipart/form-data">
                   @endif
                   @csrf
                   <div class="row">
@@ -55,6 +55,14 @@
                       </div>
                     </div>
                   </div>
+                  <div class="row">
+                    <div class="col-md-12 ">
+                      <label>Logo</label>
+                      <div class="form-group">
+                        <input name="image_path" type="file" class="form-control" placeholder="Company" required>
+                      </div>
+                    </div>
+                    </div>
                     <input type="hidden" name="current_money" value="{{ isset($cause) ? $cause->current_money : '' }}{{ old('current_money  ') }}">
                     <div class="card-footer">
                       <button type="submit" value="Submit" class="btn btn-fill btn-primary">Guardar</button>

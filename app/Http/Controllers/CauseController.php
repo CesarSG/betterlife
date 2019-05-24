@@ -5,6 +5,9 @@ namespace BetterLife\Http\Controllers;
 use BetterLife\Cause;
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
+
 
 class CauseController extends Controller
 {
@@ -20,8 +23,9 @@ class CauseController extends Controller
         $pct = ($cause->current_money * 100)/$cause->goal;
         $cause->pct = $pct;
       }
+      // dd($causes);
         $causes = Cause::paginate(5);
-      return view('admin.cause.causeIndex', compact('causes'));
+      return view('admin.cause.causeIndex', compact('causes','cause'));
     }
 
     /**
@@ -47,6 +51,7 @@ class CauseController extends Controller
       $validate = $this->validate($request, [
         'name' => ['required', 'string', 'max:255'],
         'description' => ['required', 'string', 'max:255'],
+        'goal' => ['required'],
       ]);
 
       $cause = new Cause();
@@ -56,6 +61,14 @@ class CauseController extends Controller
       $cause->status = true;
       $cause->current_money = 0;
       $cause->save();
+
+      // almacena la imagen en el disco
+      if($request->hasFile('image_path'))
+      {
+        $file=$request->file('image_path')
+                      ->store('uploads','public');
+        $cause->images()->create(['image_patch'=>$file]);
+      }
 
       return redirect()->route('causa.index')
                         ->with(['message'=>'Causa registrada correctamente']);
@@ -97,6 +110,7 @@ class CauseController extends Controller
       $validate = $this->validate($request, [
         'name' => ['required', 'string', 'max:255'],
         'description' => ['required', 'string', 'max:255'],
+        'goal' => ['required'],
       ]);
 
       $cause= Cause::findOrFail($id);
@@ -106,6 +120,17 @@ class CauseController extends Controller
       $cause->status = true;
       $cause->current_money = $request->input('current_money');
       $cause->update();
+
+      // //subir imagen de Usuario
+      if($request->hasFile('image_path')){
+
+        if($cause->images->image_patch){
+          Storage::delete('public/'.$cause->images->image_patch);
+        }
+        $file=$request->file('image_path')->store('uploads','public');
+        $cause->images()->update(['image_patch'=>$file]);
+      }
+
       return redirect()->route('causa.index')
                         ->with(['message'=>'Informacion actualizada correctamente']);
     }

@@ -26,10 +26,10 @@
             @endif
               <div class="card-body">
                 @if (@isset($event))
-                <form action="{{ route('evento.update', $event->id) }}" method="POST">
+                <form action="{{ route('evento.update', $event->id) }}" method="POST" enctype="multipart/form-data">
                   <input type="hidden" name="_method" value="PATCH">
                 @else
-                <form action="{{ route('evento.store') }}" method="POST" class="form-horizontal">
+                <form action="{{ route('evento.store') }}" method="POST" class="form-horizontal" enctype="multipart/form-data">
                 @endif
                 @csrf
                   <div class="row">
@@ -71,6 +71,14 @@
                               <option value="{{ $cause->id }}" {{ isset($event) && array_search($cause->id, $event->causes->pluck('id')->toArray()) !== false ? 'selected' : '' }}>{{ $cause->name }}</option>
                           @endforeach
                         </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12 ">
+                      <label>Logo</label>
+                      <div class="form-group">
+                        <input name="image_path" type="file" class="form-control" placeholder="Company" >
                       </div>
                     </div>
                   </div>

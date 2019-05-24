@@ -32,7 +32,7 @@ class DonationController extends Controller
     public function create()
     {
       //implementacion de policy
-      if(\Auth::user()->cannot('create')){          
+      if(\Auth::user()->cant('create', Donation::class)){
           return redirect()->back();
       }
         return view('admin.donations.create');

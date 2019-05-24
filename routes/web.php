@@ -35,7 +35,7 @@ Route::post('/user/register', 'UserController@create')->name('create.user');
 
 Route::group(['prefix'=>'admin',  'middleware' => 'auth'], function(){
   Route::resource('causa', 'CauseController')->middleware('role');
-  Route::resource('evento', 'EventController');
+  Route::resource('evento', 'EventController'); 
   Route::get('evento/{evento}/info', 'EventController@info')->name('evento.info');
   Route::resource('donacion', 'DonationController');
   Route::post('/donacion/{id}/editar', 'DonationDetailController@store');
