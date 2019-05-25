@@ -42,8 +42,7 @@
                         <th class="text-center" width="100">IMG</th>
                         <th class="text-left" width="500">Causa apoyada</th>
                           <th class="text-left" width="500">Descripción</th>
-                        <th class="text-left"width="150">Monto</th>
-                        <th class="text-left">opc</th>
+                        <th class="text-left"width="150">Monto</th>                        
                       </tr>
                     </thead>
                     <tbody>
@@ -53,7 +52,6 @@
                       <td class="td-name"><a href="">{{$donation_detail->cause->name}}</a><br></td>
                       <td class="td-name">{{$donation_detail->cause->description}}<br></td>
                       <td class="td-number"><small>$ </small>{{$donation_detail->amount,2}}</td>
-                      <td class="td-actions"><button type="button" data-placement="top" title="" class="btn-link btn btn-primary"><i class="tim-icons icon-simple-remove"></i></button></td>
                       </tr>
                       @endforeach
                       <!-- FOOTER SHOPING TABLE -->
