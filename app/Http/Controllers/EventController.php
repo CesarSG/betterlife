@@ -52,8 +52,8 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-        $event = Event::create($request->except('cause_id'));
-        $event->causes()->attach($request->cause_id);
+        $event = Event::create($request->except('causes_id'));
+        $event->causes()->attach($request->causes_id);
         /*dd($request->all());
         $event = new Event();
         $event->name = $request->input('name');
@@ -100,7 +100,11 @@ class EventController extends Controller
      */
     public function update(Request $request, Event $event)
     {
-        //
+        //dd($request->all());
+        dd($request);
+        $event->update($request->except('causes_id'));
+        //$event->causes()->sync($request->causes_id);
+        return redirect()->route('evento.index');
     }
 
     /**
@@ -109,8 +113,15 @@ class EventController extends Controller
      * @param  \BetterLife\Event  $event
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Event $event)
+    public function destroy($id)
     {
-        //
+        $event = Event::find($id);
+        $event->causes()->detach();
+        $event->delete();
+        return redirect()->route('evento.index')
+            ->with([
+                'mensaje' => 'Evento eliminado',
+                'alert-class' => 'alert-warning',
+            ]);
     }
 }
