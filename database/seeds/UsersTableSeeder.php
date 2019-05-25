@@ -22,5 +22,14 @@ class UsersTableSeeder extends Seeder
             'email_verified_at' => now(),
             'password' => bcrypt('12341234'),
         ]);
+
+        User::create([
+            'name' => 'Usuario',
+            'username' => 'user',
+            'role' => 'user',
+            'email' => 'user@betterlife.com',
+            'email_verified_at' => now(),
+            'password' => bcrypt('12341234'),
+        ]);
     }
 }

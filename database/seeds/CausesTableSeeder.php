@@ -12,6 +12,10 @@ class CausesTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(BetterLife\Cause::class, 30)->create();
+        $causes = factory(BetterLife\Cause::class, 5)
+                ->create()
+                ->each(function ($cause){
+                    $cause->images()->create(['image_patch'=>'test.jpg']);
+        });
     }
 }

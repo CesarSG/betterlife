@@ -19,8 +19,8 @@ class DonationController extends Controller
      */
     public function index()
     {
-      $donations = Donation::all();
-      // dd($donations );
+      //Constraining Eager Loads
+      $donations = Donation::orderBy('Total', 'DESC')->get();
       return view('admin.donations.index')->with(compact('donations'));
     }
 
@@ -31,7 +31,7 @@ class DonationController extends Controller
      */
     public function create()
     {
-      //implementacion de policy
+      //implementacion de policie
       if(\Auth::user()->cant('create', Donation::class)){
           return redirect()->back();
       }
@@ -64,7 +64,8 @@ class DonationController extends Controller
      */
     public function show($id)
     {
-      $causes = Cause::all();
+      //implementacion de Eager Loading
+      $causes = Cause::with(['images'])->get();
       $donation = Donation::find($id);
       $donation_details = DetailDonation::where('donation_id', $donation->id)->get();
       $total = 0;
@@ -82,10 +83,10 @@ class DonationController extends Controller
      */
     public function edit($id)
     {
-      $causes = Cause::all();
+      $causes = Cause::with(['images'])->get();
+      // $causes = Cause::all();
       $donation = Donation::find($id);
       $donation_details = DetailDonation::where('donation_id', $donation->id)->get();
-      // dd($donation_details);
       $total = 0;
 
       foreach ($donation_details as $donation_detail)
