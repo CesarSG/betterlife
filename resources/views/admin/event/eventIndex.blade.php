@@ -32,7 +32,7 @@
               @foreach ($events as $event)
               <tr>
                 <td class="text-center">{{ $event->id}}</td>
-                <td class="text-center"><div class="photo"><img alt="..." src="../images/2.jpg"></div></td>
+                <td class="text-center"><div class="photo"><img src="{{asset('storage').'/'.$event->images->image_patch}}" alt=""></div></td>
                 <td>{{ $event->name}}</td>
                 <td>{{ $event->date_begin}}</td>
                 <td>{{ $event->date_final}}</td>

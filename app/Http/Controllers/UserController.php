@@ -90,7 +90,7 @@ class UserController extends Controller
       }
       $user->image=$request->file('image_path')->store('uploads','public');
     }
-    
+
     //datos del formulario
     $name = $request -> input('name');
     $last_name = $request -> input('last_name');

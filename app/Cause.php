@@ -12,7 +12,7 @@ class Cause extends Model
 
     protected $guarded = ['id'];
     // Protected $fillable = [
-    //     'name','description','goal', 'status', 'current_money'
+    //     'name','description','image','goal', 'status', 'current_money'
     // ];
 
     public function donations()
@@ -23,5 +23,9 @@ class Cause extends Model
     public function events()
     {
         return $this->belongsToMany(Event::class);
+    }
+
+    public function images(){
+      return $this->morphOne(Image::class, 'imagetable');
     }
 }

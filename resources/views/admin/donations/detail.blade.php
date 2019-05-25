@@ -49,7 +49,7 @@
                     <tbody>
                       @foreach($donation_details as $donation_detail )
                       <tr>
-                      <td><div class="img-container "><img alt="..." src="{{route('user.avatar',['filename'=>Auth::user()->image])}}"></div></td>
+                      <td><div class="img-container"><img src="{{asset('storage').'/'.$donation_detail->cause->images->image_patch}}" alt=""></div></td>
                       <td class="td-name"><a href="">{{$donation_detail->cause->name}}</a><br></td>
                       <td class="td-name">{{$donation_detail->cause->description}}<br></td>
                       <td class="td-number"><small>$ </small>{{$donation_detail->amount,2}}</td>

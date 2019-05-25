@@ -3,9 +3,11 @@
 namespace BetterLife\Http\Controllers;
 
 use BetterLife\Cause;
-
 use BetterLife\Event;
 use Illuminate\Http\Request;
+
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 class EventController extends Controller
 {
@@ -52,17 +54,34 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-        $event = Event::create($request->except('causes_id'));
-        $event->causes()->attach($request->causes_id);
-        /*dd($request->all());
+        // $event = Event::create($request->except('cause_id'));
+        // $event->causes()->attach($request->cause_id);
+        //
+        // // almacena la imagen en el disco
+        // if($request->hasFile('image_path'))
+        // {
+        //   $file=$request->file('image_path')
+        //                 ->store('uploads','public');
+        //   $event->images()->create(['image_patch'=>$file]);
+        // }
+
         $event = new Event();
         $event->name = $request->input('name');
         $event->date_begin = $request->input('date_begin');
         $event->date_final = $request->input('date_final');
         $event->location = $request->input('location');
         $event->description = $request->input('description');
-        $event->save();*/
+        $event->save();
 
+        $event->causes()->attach($request->cause_id);
+
+        // almacena la imagen en el disco
+        if($request->hasFile('image_path'))
+        {
+          $file=$request->file('image_path')
+                        ->store('uploads','public');
+          $event->images()->create(['image_patch'=>$file]);
+        }
         return redirect()->route('evento.index')
                             ->with(['message'=>'Evento registrado correctamente']);
     }

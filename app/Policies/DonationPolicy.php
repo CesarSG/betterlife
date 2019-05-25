@@ -21,6 +21,6 @@ class DonationPolicy
 
     public function create(User $user)
     {
-      return $user->role == 'user';
+      return $user->role != 'admin';
     }
 }

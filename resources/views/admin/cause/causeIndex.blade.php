@@ -37,7 +37,9 @@
               @foreach ($causes as $cause)
               <tr>
                 <td class="text-center">{{ $cause->id}}</td>
-                <td class="text-center"><div class="photo"><img alt="..." src="../images/2.jpg"></div></td>
+                <td class="text-center">
+                  <div class="photo"><img src="{{asset('storage').'/'.$cause->images->image_patch}}" alt=""></div>
+              </td>
                 <td>{{ $cause->name}}</td>
                 <td>Activo</td>
                 <td id="meta" >${{ $cause->goal}}</td>
@@ -46,7 +48,7 @@
                     <span class="progress-badge" id="current_money">$ {{ $cause->current_money}}</span>
 
                     <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: {{$cause->pct}}%;">
+                      <div class="progress-bar" role="progressbar" style="width:{{$cause->pct}}%;">
                       </div>
                     </div>
                   </div>
