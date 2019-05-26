@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Event extends Model
 {
     protected $guarded = ['id'];
+    protected $fillable = ['name', 'location'];
 
     public function causes()
     {
@@ -24,5 +25,14 @@ class Event extends Model
     public function setNameAttribute($name)
     {
         $this->attributes['name'] = strtoupper($name);
+    }
+
+    /**
+     * Obtiene la fecha inicio y fecha final en un solo atributo "dinámico" (date_begin_date_final)
+     * @return string
+     */
+    public function getNameLocationAttribute()
+    {
+        return $this->name . ' - ' . $this->location;
     }
 }
