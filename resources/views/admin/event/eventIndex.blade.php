@@ -1,4 +1,4 @@
-@extends('layouts.admin-layout')
+@extends('layouts.admin')
 @section('section')
 @if(session('message'))
 <div class="alert alert-success">
@@ -20,23 +20,22 @@
               <tr>
                 <th class="text-center">#</th>
                 <th class="text-center">Imagen</th>
-                <th>Nombre Evento</th>
+                <th>Nombre Evento / Ubicacion</th>
                 <th>Fecha Inicio</th>
                 <th>Fecha Final</th>
-                <th class="text-center">Ubicacion</th>
                 <th class="text-center">Info</th>
                 <th class="text-center">Accion</th>
               </tr>
             </thead>
             <tbody>
+              
               @foreach ($events as $event)
               <tr>
                 <td class="text-center">{{ $event->id}}</td>
                 <td class="text-center"><div class="photo"><img src="{{asset('storage').'/'.$event->images->image_patch}}" alt=""></div></td>
-                <td>{{ $event->name}}</td>
+                <td>{{$event->name_location}}</td>
                 <td>{{ $event->date_begin}}</td>
                 <td>{{ $event->date_final}}</td>
-                <td class="text-center">{{ $event->location}}</td>
                 <td class="text-center">
                 <button type="button" rel="tooltip" class="btn btn-primary btn-sm btn-icon">
                       <a href="{{ route('evento.info', $event->id) }}" style="color:white;" class="tim-icons icon-alert-circle-exc"></a>

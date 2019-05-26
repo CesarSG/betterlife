@@ -14,13 +14,6 @@ class EventController extends Controller
 
     public function info($id)
     {
-        // $causes = Cause::all();
-        $causes = Cause::with(['images'])->get();
-
-        foreach ($causes as $cause) {
-            $pct = ($cause->current_money * 100)/$cause->goal;
-            $cause->pct = $pct;
-        }
         $event = Event::findOrFail($id);
         return view('admin.event.eventInfo', compact('event'));
     }
@@ -122,9 +115,8 @@ class EventController extends Controller
     public function update(Request $request, Event $event)
     {
         //dd($request->all());
-        //dd($event->causes()->getRelatedIds());
         $event->update($request->except('causes_id'));
-        //$event->causes()->sync($request->causes_id);
+        $event->causes()->sync($request->cause_id);
         return redirect()->route('evento.index');
     }
 
