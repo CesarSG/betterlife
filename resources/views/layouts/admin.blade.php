@@ -33,7 +33,7 @@
 
           </a>
           <a href="javascript:void(0)" class="simple-text logo-normal">
-            Creative Tim
+            Better Life
           </a>
         </div>
         <ul class="nav">
