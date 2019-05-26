@@ -52,7 +52,7 @@
 
                   <div class="col-12 col-lg-4 d-flex flex-wrap justify-content-center justify-content-lg-end align-items-center">
                       <div class="donate-btn">
-                          <a href="#">Dona Ahora</a>
+                          <a href="{{ route('login') }}">Dona Ahora</a>
                       </div><!-- .donate-btn -->
                   </div><!-- .col -->
               </div><!-- .row -->
@@ -72,8 +72,6 @@
                                 <li class="current-menu-item"><a href="{{ url('/') }}">Inicio</a></li>
                                 <li><a href="{{ route('about') }}">Nosotros</a></li>
                                 <li><a href="{{ route('causes') }}">Causas</a></li>
-                                <li><a href="{{ route('gallery') }}">Galería</a></li>
-                                <li><a href="{{ route('contact') }}">Contacto</a></li>
                                 @guest
                                     <li class="nav-item">
                                         <a style="color:#FFBB00;" class="nav-link" href="{{ route('login') }}">{{ __('Ingresa') }}</a>
@@ -147,12 +145,11 @@
 
                         <ul>
                             <li><a href="#">Aviso de Privacidad</a></li>
-                            <li><a href="#">Vuelvete un voluntario</a></li>
-                            <li><a href="#">Dona</a></li>
-                            <li><a href="#">Testimonios</a></li>
-                            <li><a href="#">Causas</a></li>
-                            <li><a href="#">Galeria</a></li>
-                            <li><a href="#">Noticias</a></li>
+                            <li><a href="{{ url('/') }}">Inicio</a></li>
+                            <li><a href="{{ route('about') }}">Nosotros</a></li>
+                            <li><a href="{{ route('causes') }}">Causas</a></li>
+                            <li><a href="{{ route('register') }}">Registrate</a></li>
+                            <li><a href="{{ route('login') }}">Ingresa</a></li>
                         </ul>
                     </div><!-- .col -->
 
@@ -162,18 +159,18 @@
 
                             <ul>
                                 <li>
-                                    <h3><a href="#">A new cause to help</a></h3>
-                                    <div class="posted-date">MArch 12, 2018</div>
+                                    <h3><a href="#">Nuevo aliado</a></h3>
+                                    <div class="posted-date">Marzo 26, 2019</div>
                                 </li>
 
                                 <li>
-                                    <h3><a href="#">We love to help people</a></h3>
-                                    <div class="posted-date">MArch 12, 2018</div>
+                                    <h3><a href="#">Ampliamos nuestra meta</a></h3>
+                                    <div class="posted-date">Mayo 02, 2019</div>
                                 </li>
 
                                 <li>
-                                    <h3><a href="#">The new ideas for helping</a></h3>
-                                    <div class="posted-date">MArch 12, 2018</div>
+                                    <h3><a href="#">Casi logramos nuestra meta anual</a></h3>
+                                    <div class="posted-date">Mayo 20, 2019</div>
                                 </li>
                             </ul>
                         </div><!-- .foot-latest-news -->

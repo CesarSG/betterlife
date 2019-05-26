@@ -75,7 +75,7 @@ class EventController extends Controller
         $event->description = $request->input('description');
         $event->save();
 
-        $event->causes()->attach($request->cause_id);
+        $event->causes()->attach($request->causes_id);
 
         // almacena la imagen en el disco
         if($request->hasFile('image_path'))
@@ -121,7 +121,11 @@ class EventController extends Controller
      */
     public function update(Request $request, Event $event)
     {
-      //
+        //dd($request->all());
+        //dd($event->causes()->getRelatedIds());
+        $event->update($request->except('causes_id'));
+        //$event->causes()->sync($request->causes_id);
+        return redirect()->route('evento.index');
     }
 
     /**
@@ -130,8 +134,15 @@ class EventController extends Controller
      * @param  \BetterLife\Event  $event
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Event $event)
+    public function destroy($id)
     {
-     //
+        $event = Event::find($id);
+        $event->causes()->detach();
+        $event->delete();
+        return redirect()->route('evento.index')
+            ->with([
+                'mensaje' => 'Evento eliminado',
+                'alert-class' => 'alert-warning',
+            ]);
     }
 }

@@ -66,7 +66,7 @@
                     <div class="col-sm-12">
                       <div class="form-group">
                         <label class="form-label">Seleccionar causa/s</label>
-                        <select name="cause_id[]" class="form-control" multiple>
+                        <select name="causes_id[]" class="form-control" multiple>
                           @foreach($causes as $cause)
                               <option value="{{ $cause->id }}" {{ isset($event) && array_search($cause->id, $event->causes->pluck('id')->toArray()) !== false ? 'selected' : '' }}>{{ $cause->name }}</option>
                           @endforeach

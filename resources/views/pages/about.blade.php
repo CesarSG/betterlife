@@ -43,21 +43,21 @@
             <div class="row">
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="circular-progress-bar">
-                        <div class="circle" id="loader_1">
+                        <div class="circle" id="loader_4">
                             <strong class="d-flex justify-content-center"></strong>
                         </div>
 
-                        <h3 class="entry-title">Hard Work</h3>
+                        <h3 class="entry-title">Trabajo Duro</h3>
                     </div>
                 </div>
 
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="circular-progress-bar">
-                        <div class="circle" id="loader_2">
+                        <div class="circle" id="loader_1">
                             <strong class="d-flex justify-content-center"></strong>
                         </div>
 
-                        <h3 class="entry-title">Pure Love</h3>
+                        <h3 class="entry-title">Amor</h3>
                     </div>
                 </div>
 
@@ -67,17 +67,17 @@
                             <strong class="d-flex justify-content-center"></strong>
                         </div>
 
-                        <h3 class="entry-title">Smart Ideas</h3>
+                        <h3 class="entry-title">Ideas</h3>
                     </div>
                 </div>
 
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="circular-progress-bar">
-                        <div class="circle" id="loader_4">
+                        <div class="circle" id="loader_2">
                             <strong class="d-flex justify-content-center"></strong>
                         </div>
 
-                        <h3 class="entry-title">Good Decisions</h3>
+                        <h3 class="entry-title">Corazon</h3>
                     </div>
                 </div>
             </div>
@@ -90,13 +90,13 @@
                 <div class="col-12 col-md-6 col-lg-5">
                     <div class="testimonial-cont">
                         <div class="entry-content">
-                            <p>We love to help all the children that have problems in the world. After 15 years we have many goals achieved.</p>
+                            <p>Nuestra meta en Better Life es mejorar el estilo de vida de nuestros niños, hacemos todo los necesario para ver una sonrisa en su rotro. Esa es nuestra principal meta en esta fundación.</p>
                         </div>
 
                         <div class="entry-footer d-flex flex-wrap align-items-center mt-5">
                             <img src="images/testimonial-1.jpg" alt="">
 
-                            <h4>Maria Williams, <span>Volunteer</span></h4>
+                            <h4>Fernanda Rodriguez, <span>Voluntario</span></h4>
                         </div>
                     </div>
                 </div>
@@ -104,13 +104,13 @@
                 <div class="col-12 col-md-6 offset-lg-2 col-lg-5">
                     <div class="testimonial-cont">
                         <div class="entry-content">
-                            <p>We love to help all the children that have problems in the world. After 15 years we have many goals achieved.</p>
+                            <p>A nosotros nos encanta trabajar con los niños que ocupan de nuestra ayuda. Después de todos estos años, estamos muy orgullosos de nuestros logros.</p>
                         </div>
 
                         <div class="entry-footer d-flex flex-wrap align-items-center mt-5">
                             <img src="images/testimonial-2.jpg" alt="">
 
-                            <h4>Cristian James, <span>Volunteer</span></h4>
+                            <h4>Antonio Velarde, <span>Voluntario</span></h4>
                         </div>
                     </div>
                 </div>
@@ -124,7 +124,7 @@
                 <div class="col-12 d-flex flex-wrap justify-content-between align-items-center">
                     <h2>Ayúdanos para poder ayudar a otros</h2>
 
-                    <a class="btn orange-border" href="#">Dona Ahora</a>
+                    <a class="btn orange-border" href="{{ route('login') }}">Dona Ahora</a>
                 </div>
             </div>
         </div>

@@ -25,6 +25,7 @@
                 <th>Fecha Final</th>
                 <th class="text-center">Ubicacion</th>
                 <th class="text-center">Info</th>
+                <th class="text-center">Accion</th>
               </tr>
             </thead>
             <tbody>
@@ -36,13 +37,22 @@
                 <td>{{ $event->date_begin}}</td>
                 <td>{{ $event->date_final}}</td>
                 <td class="text-center">{{ $event->location}}</td>
-                <td class="td-actions text-center">
+                <td class="text-center">
                 <button type="button" rel="tooltip" class="btn btn-primary btn-sm btn-icon">
                       <a href="{{ route('evento.info', $event->id) }}" style="color:white;" class="tim-icons icon-alert-circle-exc"></a>
                 </button>
-                <button type="button" rel="tooltip" class="btn btn-success btn-sm btn-icon">
+                </td>
+                <td class="td-actions text-center">
+                <form action="{{ route('evento.destroy', $event->id) }}" method="POST">
+                    <button type="button" rel="tooltip" class="btn btn-success btn-sm btn-icon">
                       <a href="{{ route('evento.edit', $event->id) }}" style="color:white;" class="tim-icons icon-settings"></a>
-                </button>
+                    </button>
+                      @csrf
+                      @method('DELETE')
+                    <button type="submit" rel="tooltip" class="btn btn-danger btn-sm btn-icon">
+                      <a style="color:white;" class="tim-icons icon-simple-remove"></a>
+                    </button>
+                </form>
               </td>
               </tr>
               @endforeach
