@@ -3,6 +3,8 @@
 namespace BetterLife\Http\Controllers;
 
 use Illuminate\Http\Request;
+use BetterLife\Cause;
+use BetterLife\Event;
 
 class PaginasController extends Controller
 {
@@ -12,13 +14,24 @@ class PaginasController extends Controller
     // }
 
     function index(){
-        return view('index');
+        $causes = Cause::all();
+        foreach ($causes as $cause) {
+            $pct = ($cause->current_money * 100)/$cause->goal;
+            $cause->pct = round($pct);
+          }
+        $events = Event::all();
+        return view('index', compact('events', 'causes'));
     }
     function about(){
         return view('pages.about');
     }
     function causes(){
-        return view('pages.causes');
+        $causes = Cause::all();
+        foreach ($causes as $cause) {
+            $pct = ($cause->current_money * 100)/$cause->goal;
+            $cause->pct = round($pct);
+          }
+        return view('pages.causes', compact('causes'));
     }
     function gallery(){
         return view('pages.gallery');
