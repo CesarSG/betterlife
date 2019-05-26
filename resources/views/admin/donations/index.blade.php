@@ -43,28 +43,9 @@
               </tr>
             </thead>
             <tbody>
-
-                @foreach ($donations as $donation)
-                @if(Auth::user()->role=='admin')
-                <tr>
-                  <td class="text-center">{{ $donation->id}}</td>
-                  <td class="text-center">{{$donation->dataTime_donation}}</td>
-                  <td>$ {{$donation->Total}}</td>
-                  <td>Aprovada</td>
-                  <td class="td-actions text-center">
-                    <button type="button" rel="tooltip" class="btn btn-success btn-sm btn-icon">
-                      <a href="{{ route('donacion.show', $donation->id) }}" style="color:white;" class="tim-icons icon-notes"></a>
-                    </button>
-                  <!-- <form action="{{ route('donacion.destroy', $donation->id) }}" method="POST">
-                        @csrf
-                        @method('DELETE')
-                      <button type="submit" rel="tooltip" class="btn btn-danger btn-sm btn-icon">
-                        <a style="color:white;" class="tim-icons icon-simple-remove"></a>
-                      </button>
-                  </form> -->
-                </td>
-                </tr>
-                  @elseif($donation->user_id==Auth::user()->id)
+                @if(!$donations->isEmpty())
+                  @foreach ($donations as $donation)
+                  @if(Auth::user()->role=='admin')
                   <tr>
                     <td class="text-center">{{ $donation->id}}</td>
                     <td class="text-center">{{$donation->dataTime_donation}}</td>
@@ -83,14 +64,40 @@
                     </form> -->
                   </td>
                   </tr>
-                  @endif
-                @endforeach
+                    @elseif($donation->user_id==Auth::user()->id)
+                    <tr>
+                      <td class="text-center">{{ $donation->id}}</td>
+                      <td class="text-center">{{$donation->dataTime_donation}}</td>
+                      <td>$ {{$donation->Total}}</td>
+                      <td>Aprovada</td>
+                      <td class="td-actions text-center">
+                        <button type="button" rel="tooltip" class="btn btn-success btn-sm btn-icon">
+                          <a href="{{ route('donacion.show', $donation->id) }}" style="color:white;" class="tim-icons icon-notes"></a>
+                        </button>
+                      <!-- <form action="{{ route('donacion.destroy', $donation->id) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                          <button type="submit" rel="tooltip" class="btn btn-danger btn-sm btn-icon">
+                            <a style="color:white;" class="tim-icons icon-simple-remove"></a>
+                          </button>
+                      </form> -->
+                    </td>
+                    </tr>
+                    @endif
+                  @endforeach
+                @else
+                  <p hidden>{{$vacio = true}}</p>
+                @endif
+                
             </tbody>
             </table>
             <a href="{{ route('donacion.create') }}" class="btn-round float-right mr-5 btn btn-info">Realizar donacion <i href="{{ route('donacion.create') }}"  class="tim-icons icon-minimal-right"></i></a>
             <div class="ps__rail-x" style="left: 0px; bottom: 0px;">
               <div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>
             </div>
+            @if(isset($vacio))
+            <h3 class='text-center'>Aun no hay donaciones</h3>
+            @endif
             <div class="ps__rail-y" style="top: 0px; right: 0px;">
               <div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 0px;"></div>
             </div>
