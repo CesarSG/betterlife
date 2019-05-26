@@ -16,4 +16,13 @@ class Event extends Model
     public function images(){
       return $this->morphOne(Image::class, 'imagetable');
     }
+    /**
+     * Guarda el nombre en mayúsculas.
+     * @param string $name
+     * @return void
+     */
+    public function setNameAttribute($name)
+    {
+        $this->attributes['name'] = strtoupper($name);
+    }
 }
