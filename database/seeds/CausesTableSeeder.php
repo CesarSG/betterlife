@@ -15,7 +15,7 @@ class CausesTableSeeder extends Seeder
         $causes = factory(BetterLife\Cause::class, 5)
                 ->create()
                 ->each(function ($cause){
-                    $cause->images()->create(['image_patch'=>'test.jpg']);
+                    $cause->images()->create(['image_patch'=>'uploads/jccoPcTGRqaPW9QJH3TTywTsAwIdX4CDT2RXZdHL.jpeg']);
         });
     }
 }
