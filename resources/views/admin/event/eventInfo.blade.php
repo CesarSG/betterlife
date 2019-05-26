@@ -19,7 +19,7 @@
         <div class="row">
         @foreach($event->causes as $cause)
           <div class="col-md-6 col-lg-3">
-            <div class="card-pricing card-primary card">
+            <div style="height: 440px" class="card-pricing card-primary card">
               <div class="card-body">
                 <h3 class="card-title">{{$cause->name}}</h3>
                 <img class="card-img" src="{{asset('storage').'/'.$cause->images->image_patch}}" alt="">
@@ -28,12 +28,8 @@
                   <p class="plan">{{$cause->description}}</p>
                   <br>
                   <div class="progress-container">
-                    <h4>${{$cause->goal}} Meta </h4>
-                    <span class="progress-badge">$ {{ $cause->current_money}} - Dinero actual</span>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: {{$cause->pct}}%;">
-                      </div>
-                    </div>
+                    <h4>${{number_format($cause->goal)}} Meta </h4>
+                    <span class="progress-badge">$ {{ number_format($cause->current_money)}} - Dinero actual</span>
                   </div>
                 </div>
               </div>

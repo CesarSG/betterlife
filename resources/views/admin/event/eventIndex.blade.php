@@ -1,4 +1,4 @@
-@extends('layouts.admin-layout')
+@extends('layouts.admin')
 @section('section')
 @if(session('message'))
 <div class="alert alert-success">
