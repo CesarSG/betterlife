@@ -28,4 +28,10 @@ class Cause extends Model
     public function images(){
       return $this->morphOne(Image::class, 'imagetable');
     }
+
+    public function scopeName($query, $name)
+    {
+        if($name)
+            return $query->where('name', 'LIKE', "%$name%");
+    }
 }
