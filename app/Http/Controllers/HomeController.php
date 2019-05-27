@@ -35,7 +35,9 @@ class HomeController extends Controller
         $events = Event::all();
         $users = User::all();
         $donations = Donation::all();
-        //return view('admin.dashUser', compact('causes'));
+
+
         return view('admin.dash', compact('causes','events','users','donations'));
+
     }
 }
