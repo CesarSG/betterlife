@@ -13,6 +13,11 @@ git clone https://github.com/CesarSG/betterlife.git
 ```git
 npm install
 ```
+3. Generar llave para proyecto
+
+```git
+php artisan key:generate
+```
 Unir Storage con proyecto
 ```git
 php artisan storage:link
