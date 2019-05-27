@@ -11,8 +11,13 @@ git clone https://github.com/CesarSG/betterlife.git
 2. Instalar dependencias para proyecto
 
 ```git
-composer install
+npm install
 ```
+Unir Storage con proyecto
+```git
+php artisan storage:link
+```
+ 
 ## Programadores
 
 * Cesar Sevilla Galindo
@@ -26,8 +31,5 @@ composer install
 
 * Administrar donaciones
 * Administrar eventos de la asociación
-* Sección de información de las personas ayudadas
-* División de tipo de asociaciones
 * Administración de metas de donaciones
-* Administración de voluntarios
 * Sección de pago de donación
