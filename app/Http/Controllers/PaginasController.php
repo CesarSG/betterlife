@@ -26,7 +26,7 @@ class PaginasController extends Controller
         return view('pages.about');
     }
     function causes(){
-        $causes = Cause::all();
+        $causes = Cause::paginate(6);
         foreach ($causes as $cause) {
             $pct = ($cause->current_money * 100)/$cause->goal;
             $cause->pct = round($pct);

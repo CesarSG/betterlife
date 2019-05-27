@@ -1,4 +1,4 @@
-@extends('layouts.admin-layout')
+@extends('layouts.admin')
 
 @section('section')
 <div class="alert alert-info">

@@ -1,4 +1,4 @@
-@extends('layouts.admin-layout')
+@extends('layouts.admin')
 @section('section')
 
 @if ($message = Session::get('success'))

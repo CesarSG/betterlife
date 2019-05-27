@@ -26,7 +26,7 @@
                           </div><!-- .figure-overlay -->
                       </figure>
 
-                      <div class="cause-content-wrap">
+                      <div style="height: 300px" class="cause-content-wrap">
                           <header class="entry-header d-flex flex-wrap align-items-center">
                               <h3 class="entry-title w-100 m-0"><a href="#">{{$cause->name}}</a></h3>
                           </header><!-- .entry-header -->
@@ -58,8 +58,10 @@
                   </div><!-- .cause-wrap -->
               </div><!-- .col -->
               @endforeach
+              
 
           </div><!-- .row -->
+          {{$causes->links()}}
       </div><!-- .container -->
   </div><!-- .our-causes -->
 

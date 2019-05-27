@@ -62,6 +62,7 @@
               @endforeach
               </tbody>
             </table>
+            {{$events->links()}}
             <a href="{{ route('evento.create') }}" class="btn-round float-right mr-5 btn btn-info">Crear un nuevo evento<i href="{{ route('evento.create') }}"  class="tim-icons icon-minimal-right"></i></a>
             <div class="ps__rail-x" style="left: 0px; bottom: 0px;">
               <div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>

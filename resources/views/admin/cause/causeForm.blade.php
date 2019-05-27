@@ -25,7 +25,7 @@
               @endif
               <div class="card-body">
                 @if (@isset($cause))
-                <form action="{{ route('causa.update', $cause->id) }}" method="POST" enctype="multipart/form-data">
+                <form  action="{{ route('causa.update', $cause->id) }}" method="POST" enctype="multipart/form-data">
                   <input type="hidden" name="_method" value="PATCH">
                 @else
                 <form action="{{ route('causa.store') }}" method="POST" class="form-horizontal" enctype="multipart/form-data">
@@ -35,7 +35,7 @@
                     <div class="col-sm-12">
                       <div class="form-group">
                           <label>Nombre del la causa</label>
-                        <input type="text" class="form-control" name="name" value="{{ isset($cause) ? $cause->name : '' }}{{ old('name  ') }}"  placeholder="Ingresa el nombre del evento">
+                        <input required type="text" class="form-control" name="name" value="{{ isset($cause) ? $cause->name : '' }}{{ old('name  ') }}"  placeholder="Ingresa el nombre del evento">
                       </div>
                     </div>
                   </div>
@@ -43,7 +43,7 @@
                     <div class="col-sm-12">
                       <div class="form-group">
                           <label>Descripción de la causa</label>
-                              <textarea rows="3" cols="80" name="description" value="" class="form-control" placeholder="Aqui puede ir la descripcion de la causa.">{{ isset($cause) ? $cause->description : '' }}{{ old('description') }}</textarea>
+                              <textarea required rows="3" cols="80" name="description" value="" class="form-control" placeholder="Aqui puede ir la descripcion de la causa.">{{ isset($cause) ? $cause->description : '' }}{{ old('description') }}</textarea>
                       </div>
                     </div>
                   </div>
@@ -51,7 +51,7 @@
                     <div class="col-sm-12">
                       <div class="form-group">
                         <label>Meta del evento</label>
-                        <input type="number" class="form-control" name="goal" value="{{ isset($cause) ? $cause->goal : '' }}{{ old('goal') }}" placeholder="Ingresa la meta del evento">
+                        <input required type="number" class="form-control" name="goal" value="{{ isset($cause) ? $cause->goal : '' }}{{ old('goal') }}" placeholder="Ingresa la meta del evento">
                       </div>
                     </div>
                   </div>
@@ -59,7 +59,7 @@
                     <div class="col-md-12 ">
                       <label>Logo</label>
                       <div class="form-group">
-                        <input name="image_path" type="file" class="form-control" placeholder="Company" required>
+                        <input required name="image_path" type="file" class="form-control" placeholder="Company" required>
                       </div>
                     </div>
                     </div>
