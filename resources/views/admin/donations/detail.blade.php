@@ -1,4 +1,4 @@
-@extends('layouts.admin-layout')
+@extends('layouts.admin')
 @section('section')
     <!--Form Content Donacion  -->
     <div class="col-md-12">
