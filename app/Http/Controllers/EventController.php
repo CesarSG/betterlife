@@ -25,9 +25,8 @@ class EventController extends Controller
      */
     public function index()
     {
-        $causes = Cause::all();
-        $events = Event::all();
-        return view('admin.event.eventIndex', compact('events', 'causes'));
+        $events = Event::paginate(7);
+        return view('admin.event.eventIndex', compact('events'));
     }
 
     /**
@@ -49,6 +48,12 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
+        $validate = $this->validate($request, [
+            'name' => ['required', 'string', 'max:255'],
+            'description' => ['required', 'string', 'max:255'],
+            'date_begin' => ['required'],
+            'date_final' => ['required'],
+          ]);
         // $event = Event::create($request->except('cause_id'));
         // $event->causes()->attach($request->cause_id);
         //
