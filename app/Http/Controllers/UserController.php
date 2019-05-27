@@ -42,11 +42,12 @@ class UserController extends Controller
       {
 
         $validate = $this->validate($request, [
-          'username' => ['required', 'string', 'max:50','unique'],
+          'username' => ['required', 'string', 'max:50','unique:users'],
           'name' => ['required', 'string', 'max:255'],
           'last_name' => ['string', 'max:100'],
-          'email' => ['required', 'string', 'email', 'max:255', 'unique'],
+          'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
         ]);
+
 
         //datos del formulario
         $name = $request -> input('name');
