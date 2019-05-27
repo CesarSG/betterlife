@@ -58,8 +58,10 @@
                   </div><!-- .cause-wrap -->
               </div><!-- .col -->
               @endforeach
+              
 
           </div><!-- .row -->
+          {{$causes->links()}}
       </div><!-- .container -->
   </div><!-- .our-causes -->
 
