@@ -36,7 +36,7 @@
                     <div class="col-sm-12">
                       <div class="form-group">
                           <label>Nombre del evento</label>
-                        <input type="text" class="form-control" name="name" value="{{ isset($event) ? $event->name : '' }}{{ old('name  ') }}"  placeholder="Ingresa el nombre del evento">
+                        <input required type="text" class="form-control" name="name" value="{{ isset($event) ? $event->name : '' }}{{ old('name  ') }}"  placeholder="Ingresa el nombre del evento">
                       </div>
                     </div>
                   </div>
@@ -44,13 +44,13 @@
                     <div class="col-md-6 pr-md-1">
                       <div class="form-group">
                         <label>Fecha de inicio</label>
-                        <input type="date" name="date_begin" value="{{ isset($event) ? $event->date_begin : '' }}{{ old('date_begin  ') }}"  class="form-control">
+                        <input required type="date" name="date_begin" value="{{ isset($event) ? $event->date_begin : '' }}{{ old('date_begin  ') }}"  class="form-control">
                       </div>
                     </div>
                     <div class="col-md-6 pl-md-1">
                       <div class="form-group">
                         <label>Fecha final</label>
-                        <input type="date" name="date_final" value="{{ isset($event) ? $event->date_final : '' }}{{ old('date_final  ') }}" class="form-control" >
+                        <input required type="date" name="date_final" value="{{ isset($event) ? $event->date_final : '' }}{{ old('date_final  ') }}" class="form-control" >
                       </div>
                     </div>
                   </div>
@@ -58,7 +58,7 @@
                     <div class="col-sm-12">
                       <div class="form-group">
                           <label>Ubicacion del evento</label>
-                        <input type="text" name="location" class="form-control" value="{{ isset($event) ? $event->location : '' }}{{ old('location  ') }}" placeholder="Ingresa la ubicacion del evento">
+                        <input required type="text" name="location" class="form-control" value="{{ isset($event) ? $event->location : '' }}{{ old('location  ') }}" placeholder="Ingresa la ubicacion del evento">
                       </div>
                     </div>
                   </div>
@@ -78,7 +78,7 @@
                     <div class="col-md-12 ">
                       <label>Logo</label>
                       <div class="form-group">
-                        <input name="image_path" type="file" class="form-control" placeholder="Company" >
+                        <input required name="image_path" type="file" class="form-control" placeholder="Company" >
                       </div>
                     </div>
                   </div>
@@ -86,7 +86,7 @@
                     <div class="col-sm-12">
                       <div class="form-group">
                           <label>Descripcion del evento</label>
-                        <textarea rows="4" cols="80" class="form-control" name="description" value="{{ isset($event) ? $event->description : '' }}{{ old('description  ') }}" placeholder="Aqui puede ir la descripcion del evento.">{{ isset($event) ? $event->description : '' }}{{ old('description  ') }}</textarea>
+                        <textarea required rows="4" cols="80" class="form-control" name="description" value="{{ isset($event) ? $event->description : '' }}{{ old('description  ') }}" placeholder="Aqui puede ir la descripcion del evento.">{{ isset($event) ? $event->description : '' }}{{ old('description  ') }}</textarea>
                       </div>
                     </div>
                   </div>
