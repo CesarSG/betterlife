@@ -12,8 +12,13 @@
     <div class="card">
       <div class="card-header">
         <h4 class="card-title">Eventos</h4>
+        <form action="{{route('evento.index')}}" method="GET" class="pull-right form-inline ml-auto">
+          <div class="form-group">
+            <input name="name" type="search" class="form-control" placeholder="Search">
+          </div>
+          <button type="submit" class="btn btn-info btn-icon btn-round ml-2"><i class="tim-icons icon-zoom-split"></i></button>
+        </form>
       </div>
-      <div class="card-body">
         <div class="table-responsive ps">
           <table class="table tablesorter">
             <thead class="text-primary">
@@ -28,7 +33,7 @@
               </tr>
             </thead>
             <tbody>
-              
+
               @foreach ($events as $event)
               <tr>
                 <td class="text-center">{{ $event->id}}</td>
@@ -40,7 +45,7 @@
                 <button type="button" rel="tooltip" class="btn btn-primary btn-sm btn-icon">
                       <a href="{{ route('evento.info', $event->id) }}" style="color:white;" class="tim-icons icon-alert-circle-exc"></a>
                 </button>
-                </td>
+            </td>
                 <td class="td-actions text-center">
                 <form action="{{ route('evento.destroy', $event->id) }}" method="POST">
                     <button type="button" rel="tooltip" class="btn btn-success btn-sm btn-icon">

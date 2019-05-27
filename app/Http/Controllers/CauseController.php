@@ -16,13 +16,14 @@ class CauseController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+      $name = $request->get('name');
 
-      // $causes = Cause::all();
-      // $causes = Cause::orderBy('current_money', 'DESC')->get();
+      $causes = Cause::orderBy('id','ASC')
+        ->name($name)
+        ->paginate(7);
 
-      $causes = Cause::paginate(7);
       foreach ($causes as $cause) {
         $pct = ($cause->current_money * 100)/$cause->goal;
         $cause->pct = $pct;

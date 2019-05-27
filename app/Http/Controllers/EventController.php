@@ -23,10 +23,13 @@ class EventController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        $name = $request->get('name');
         $causes = Cause::all();
-        $events = Event::all();
+        $events = Event::orderBy('id','ASC')
+          ->name($name)
+          ->paginate(5);
         return view('admin.event.eventIndex', compact('events', 'causes'));
     }
 
